@@ -1,0 +1,26 @@
+version: '3.8'
+
+networks:
+  default:
+    external:
+      name: simplified_payment-network
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports: 
+      - 5672:5672
+      - 5673:5673
+      - 15672:15672
+    networks:
+      - default
+    volumes:
+        - ./.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/mnesia
+        - ./.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - ./rabbitmq/config/enabled_plugins:/etc/rabbitmq/enabled_plugins
+        - ./rabbitmq/config/rabbit.conf:/etc/rabbitmq/rabbit.conf
+        - ./rabbitmq/certs/:/etc/rabbitmq/ssl 
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
