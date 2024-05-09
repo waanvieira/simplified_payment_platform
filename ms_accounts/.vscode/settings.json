@@ -1,4 +1,0 @@
-{
-    "intelephense.diagnostics.typeErrors": true,
-    "php.validate.executablePath": "/Applications/MAMP/bin/php/php8.0.8/bin/php"
-}
