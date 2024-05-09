@@ -10,4 +10,4 @@ php artisan db:seed
 npm install
 # npm run dev
 
-php-fpm
+# php-fpm
