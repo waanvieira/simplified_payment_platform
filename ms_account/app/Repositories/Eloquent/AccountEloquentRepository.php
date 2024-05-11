@@ -105,6 +105,7 @@ class AccountEloquentRepository implements AccountEntityRepositoryInterface
             'email' => $entity->email,
             'password' => $entity->password,
             'shopkeeper' => $entity->shopkeeper,
+            'balance' => $entity->balance,
             'created_at' => $entity->createdAt()
         ]);
 
@@ -121,14 +122,6 @@ class AccountEloquentRepository implements AccountEntityRepositoryInterface
     private function findByIdEloquent(string $id)
     {
         return $this->model->find($id);
-    }
-
-    public function updateBalance(Entity $entity) : bool
-    {
-        $dataDb = $this->findByIdEloquent($entity->id);
-        return $dataDb->update([
-            'balance' => $entity->balance,
-        ]);
     }
 
     public function findByEmail(string $email)
