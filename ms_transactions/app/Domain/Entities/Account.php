@@ -71,7 +71,7 @@ class Account extends Entity
 
     public function isShopkeeper(): bool
     {
-        if (strlen($this->cpfCnpj()) >= 14) {
+        if (strlen($this->cpfCnpj()) > 14) {
             return $this->shopkeeper = true;
         }
 
@@ -94,7 +94,7 @@ class Account extends Entity
             throw new EntityValidationException("Shopkeeper can't make transfer");
         }
 
-        if ($this->balance < 0.01) {
+        if ($this->balance < 0.01 || $this->balance < $value) {
             throw new EntityValidationException('balance unavailable to carry out transaction');
         }
 
@@ -106,7 +106,7 @@ class Account extends Entity
         $this->balance += $value;
     }
 
-    public function transferError(float $value)
+    public function transferReprovedEstimateValue(float $value)
     {
         $this->balance += $value;
     }
