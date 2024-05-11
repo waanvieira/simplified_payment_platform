@@ -42,7 +42,7 @@ class TransferReprovedUseCase
             $self->repository->update($transactionEntity);
             $payer->transferReprovedEstimateValue($transactionEntity->value);
             $self->accountEntityRepositoryInterface->update($payer);
-            $self->rabbitMqService->producer("transferReproved", $transactionEntity->toArray());
+            $self->rabbitMqService->producer("notifyTransaction", $transactionEntity->toArray());
         });
     }
 }

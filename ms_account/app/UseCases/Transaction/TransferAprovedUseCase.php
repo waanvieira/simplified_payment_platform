@@ -41,7 +41,7 @@ class TransferAprovedUseCase
             $self->repository->update($transactionEntity);
             $payee->receiveTransfer($transactionEntity->value);
             $self->accountEntityRepositoryInterface->update($payee);
-            $self->rabbitMqService->producer("transferAproved", $transactionEntity->toArray());
+            $self->rabbitMqService->producer("notifyTransaction", $transactionEntity->toArray());
         });
     }
 }

@@ -33,7 +33,7 @@ class AccountCreateUseCase
         }
 
         $account = $this->repository->insert($accountEntity);
-        $this->rabbitMqService->producer('userCreated', $account->toArray());
+        // $this->rabbitMqService->producer('userCreated', $account->toArray());
 
         return new AccountCreateOutputDto(
             id: $account->id(),
