@@ -57,7 +57,7 @@ class RabbitMQCommand extends Command
                 $this->amqp->producerWhileHaveRegister("transferProcessed", (array)$transferFake);
                 $message->ack();
             } catch (Exception $e) {
-                dd($e);
+                // Tratar erro
             }
         };
 
