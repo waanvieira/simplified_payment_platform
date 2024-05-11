@@ -3,6 +3,7 @@
 namespace App\Services\RabbitMQ;
 
 use Closure;
+use Exception;
 use PhpAmqpLib\Connection\AMQPSSLConnection;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Exchange\AMQPExchangeType;
@@ -40,20 +41,6 @@ class AMQPService implements RabbitInterface
         $this->channel->basic_publish($message, $exchange, $queue);
         $this->closeChannel();
         $this->closeConnection();
-    }
-
-    public function producerWhileHaveRegister(string $queue, array $payload, string $exchange = ''): void
-    {
-        $this->connect();
-        (bool)$durable = true;
-        $this->channel->queue_declare($queue, $durable, false, false, false);
-        $this->channel->exchange_declare($queue, 'direct', false, true, false);
-        $message = new AMQPMessage(
-            json_encode($payload),
-            ['delivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT]
-        );
-
-        $this->channel->basic_publish($message, $exchange, $queue);
     }
 
     public function producerInLote(string $queue, array $payload, int $registerNumber, int $currentRegisterNumber): void
@@ -99,6 +86,7 @@ class AMQPService implements RabbitInterface
 
     public function consumer(string $queue, string $exchange, Closure $callback): void
     {
+
         $this->connect();
 
         $this->channel->queue_declare(

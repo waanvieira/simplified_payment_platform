@@ -3,15 +3,10 @@
 namespace App\Console\Commands;
 
 use App\Domain\Enum\TransactionStatus;
-use App\Domain\Enum\TransactionType;
-use App\Exceptions\NotFoundException;
-use App\Services\AMQP\AMQPInterface;
 use App\Services\RabbitMQ\RabbitInterface;
 use App\UseCases\DTO\Transaction\TransferAprovedInputDto;
 use App\UseCases\Transaction\TransferAprovedUseCase;
 use App\UseCases\Transaction\TransferReprovedUseCase;
-use Core\UseCase\Video\ChangeEncoded\ChangeEncodedPathVideo;
-use Core\UseCase\Video\ChangeEncoded\DTO\ChangeEncodedVideoDTO;
 use Exception;
 use Illuminate\Console\Command;
 
@@ -50,7 +45,7 @@ class RabbitMQCommand extends Command
             $body = json_decode($message->body);
             try {
 
-                if (isset($body->transactionType) && $body->TRANSFER === '') {
+                if (isset($body->transactionType) && $body->transactionType === 'TRANSFER') {
                     if ($body->transactionStatus === TransactionStatus::APROVED->value) {
                         $this->transferAprovedUseCase->execute(
                             new TransferAprovedInputDto(
@@ -73,10 +68,9 @@ class RabbitMQCommand extends Command
                         );
                     }
                 }
+                $message->ack();
             } catch (Exception $e) {
-                if ($e instanceof NotFoundException) {
-                    // Notificar erro
-                }
+                // Notificar e rtata o erro, enviando para uma fila de reprocessamento
             }
         };
 
