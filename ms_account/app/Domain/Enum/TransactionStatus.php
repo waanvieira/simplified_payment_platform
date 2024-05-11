@@ -4,7 +4,7 @@ namespace App\Domain\Enum;
 
 enum TransactionStatus: string
 {
-    case ERROR = 'ERROR';
+    case ERROR = 'REPROVED';
     case APROVED = 'APROVED';
     case PROCESSING = 'PROCESSING';
 }
