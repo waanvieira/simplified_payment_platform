@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   app_account:
     build: .
@@ -8,10 +9,10 @@ services:
     volumes:
       - ./:/var/www
     depends_on:
-      - app-mysql
+      - db_mysql_account
       - app-redis
 
-  app-mysql:
+  db_mysql_account:
     image: mysql:8.0.30
     command: --innodb-use-native-aio=0
     restart: always
