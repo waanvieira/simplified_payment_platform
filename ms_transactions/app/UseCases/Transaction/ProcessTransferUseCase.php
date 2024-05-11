@@ -19,7 +19,7 @@ class ProcessTransferUseCase
 
     public function execute(ProcessTransferInputDto $input) : ProcessTransferOutputDto
     {
-        // $returnFake = $this->service->processPayment((array)$input);
+        $this->service->processPayment((array)$input);
         $arrayStatus = array("APROVED", "REPROVED");
         $rand_keys = array_rand($arrayStatus);
         $transferFakeAproved = [
