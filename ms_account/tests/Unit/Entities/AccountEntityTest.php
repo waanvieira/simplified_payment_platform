@@ -158,7 +158,7 @@ class AccountEntityTest extends TestCase
         );
 
         $account->receiveTransfer(35);
-        $account->transferError(35);
+        $account->transferReprovedEstimateValue(35);
         $this->assertEquals(10, $account->balance);
     }
 
