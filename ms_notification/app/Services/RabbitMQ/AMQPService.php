@@ -26,8 +26,8 @@ class AMQPService implements RabbitInterface
     public function producer(string $queue, array $payload, string $exchange = ''): void
     {
         $this->connect();
-
-        $this->channel->queue_declare($queue, false, false, false, false);
+        (bool)$durable = true;
+        $this->channel->queue_declare($queue, $durable, false, false, false);
         $this->channel->exchange_declare($queue, 'direct', false, true, false);
         // Por hora não estamos usando bind no rabbit, avaliar quadno tiver essa mudança
         // $this->channel->queue_bind($queue, $exchange);
@@ -40,6 +40,20 @@ class AMQPService implements RabbitInterface
         $this->channel->basic_publish($message, $exchange, $queue);
         $this->closeChannel();
         $this->closeConnection();
+    }
+
+    public function producerWhileHaveRegister(string $queue, array $payload, string $exchange = ''): void
+    {
+        $this->connect();
+        (bool)$durable = true;
+        $this->channel->queue_declare($queue, $durable, false, false, false);
+        $this->channel->exchange_declare($queue, 'direct', false, true, false);
+        $message = new AMQPMessage(
+            json_encode($payload),
+            ['delivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT]
+        );
+
+        $this->channel->basic_publish($message, $exchange, $queue);
     }
 
     public function producerInLote(string $queue, array $payload, int $registerNumber, int $currentRegisterNumber): void
@@ -105,9 +119,15 @@ class AMQPService implements RabbitInterface
             callback: $callback
         );
         // Comentado apenas por enquanto que esse MS não tem filas para consumir, para não travar os testes unitários
-        // while ($this->channel->is_consuming()) {
-        //     $this->channel->wait();
-        // }
+        while ($this->channel->is_consuming()) {
+            // try {
+                $this->channel->wait();
+            // } catch (Exception $e) {
+                // dump($body);
+                // dump($e);
+                // continue;
+            // }
+        }
 
         $this->closeChannel();
         $this->closeConnection();
@@ -120,7 +140,7 @@ class AMQPService implements RabbitInterface
         }
 
         if (env('RABBITMQ_SCHEME') === "amqps") {
-           $this->sslConnection();
+            $this->sslConnection();
         } else {
             $this->streamConnection();
         }

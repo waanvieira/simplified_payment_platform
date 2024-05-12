@@ -9,6 +9,8 @@ use Exception;
 
 abstract class Entity
 {
+    abstract function toArray();
+
     public function __get($property)
     {
         if (isset($this->{$property})) {

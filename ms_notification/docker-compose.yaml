@@ -1,43 +1,24 @@
 version: '3.8'
+
 services:
-  app_account:
+  app_notification:
     build: .
-    container_name: app_account
-    # entrypoint: sh ./entrypoint.sh
-    # entrypoint: "sh .entrypoint.sh"
+    entrypoint: ["sh", "entrypoint.sh"]
+    container_name: app_notification
     volumes:
       - ./:/var/www
     depends_on:
-      - app-mysql
       - app-redis
-
-  app-mysql:
-    image: mysql:8.0.30
-    command: --innodb-use-native-aio=0
-    restart: always
-    tty: true
-    ports:
-      - "3306"
-    volumes:
-      - "./.docker/dbdata:/var/lib/mysql"
-    environment:
-      MYSQL_DATABASE: account_db
-      MYSQL_ROOT_PASSWORD: root
-
-  # adminer:
-  #   image: adminer
-  #   ports:
-  #   - 8080:8080
 
   app-nginx:
     build: ./.docker/nginx
     restart: always
     ports:
-      - "9005:80"
+      - "9007:80"
     volumes:
       - ./:/var/www
     depends_on:
-      - app_account
+      - app_notification
 
   app-redis:
     image: redis:alpine
