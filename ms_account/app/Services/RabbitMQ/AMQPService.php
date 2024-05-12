@@ -3,7 +3,6 @@
 namespace App\Services\RabbitMQ;
 
 use Closure;
-use Exception;
 use PhpAmqpLib\Connection\AMQPSSLConnection;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Exchange\AMQPExchangeType;
@@ -29,8 +28,7 @@ class AMQPService implements RabbitInterface
         $this->connect();
         (bool)$durable = true;
         $this->channel->queue_declare($queue, false, $durable, false, false);
-        $this->channel->exchange_declare($queue, 'direct', false, true, false);
-        // Por hora não estamos usando bind no rabbit, avaliar quadno tiver essa mudança
+        $this->channel->exchange_declare($queue, AMQPExchangeType::DIRECT, false, true, false);
         // $this->channel->queue_bind($queue, $exchange);
 
         $message = new AMQPMessage(
@@ -46,7 +44,8 @@ class AMQPService implements RabbitInterface
     public function producerInLote(string $queue, array $payload, int $registerNumber, int $currentRegisterNumber): void
     {
         $this->connect();
-        $this->channel->queue_declare($queue, false, false, false, false);
+        (bool)$durable = true;
+        $this->channel->queue_declare($queue, false, $durable, false, false);
         $this->channel->exchange_declare($queue, AMQPExchangeType::DIRECT, false, true, false);
 
         $message = new AMQPMessage(
@@ -95,26 +94,13 @@ class AMQPService implements RabbitInterface
             auto_delete: false
         );
 
-        // Por hora não estamos usando bind no rabbit, avaliar quadno tiver essa mudança
-        // $this->channel->queue_bind(
-        // queue: $queue,
-        // exchange: $exchange,
-        // routing_key: config('microservices.queue_name')
-        // );
-
         $this->channel->basic_consume(
             queue: $queue,
             callback: $callback
         );
-        // Comentado apenas por enquanto que esse MS não tem filas para consumir, para não travar os testes unitários
+
         while ($this->channel->is_consuming()) {
-            // try {
-                $this->channel->wait();
-            // } catch (Exception $e) {
-                // dump($body);
-                // dump($e);
-                // continue;
-            // }
+            $this->channel->wait();
         }
 
         $this->closeChannel();
@@ -181,7 +167,6 @@ class AMQPService implements RabbitInterface
 
     public function streamConnection()
     {
-        // dd($this->arrayDataConnection);
         $this->connection = new AMQPStreamConnection(
             host: $this->arrayDataConnection['host'],
             port: $this->arrayDataConnection['port'],
