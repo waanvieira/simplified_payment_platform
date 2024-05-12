@@ -28,7 +28,7 @@ class AMQPService implements RabbitInterface
     {
         $this->connect();
         (bool)$durable = true;
-        $this->channel->queue_declare($queue, $durable, false, false, false);
+        $this->channel->queue_declare($queue, false, $durable, false, false);
         $this->channel->exchange_declare($queue, 'direct', false, true, false);
         // Por hora não estamos usando bind no rabbit, avaliar quadno tiver essa mudança
         // $this->channel->queue_bind($queue, $exchange);

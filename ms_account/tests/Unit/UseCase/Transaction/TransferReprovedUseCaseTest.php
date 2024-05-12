@@ -10,6 +10,7 @@ use App\Models\Transaction as ModelsTransaction;
 use App\Repositories\Eloquent\AccountEloquentRepository;
 use App\Repositories\Eloquent\TransactionEloquentRepository;
 use App\Services\RabbitMQ\AMQPService;
+use App\Services\RabbitMQ\RabbitInterface;
 use App\UseCases\DTO\Transaction\TransactionCreateInputDto;
 use App\UseCases\DTO\Transaction\TransferAprovedInputDto;
 use App\UseCases\Transaction\TransferAprovedUseCase;
@@ -17,6 +18,7 @@ use App\UseCases\Transaction\TransferReprovedUseCase;
 use Exception;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Mockery;
+use stdClass;
 use Tests\TestCase;
 use Tests\Traits\Entity\CreateTransactionByTest;
 
@@ -57,9 +59,9 @@ class TransferReprovedUseCaseTest extends TestCase
     {
         $model = new ModelsTransaction();
         $repositoyMock = new TransactionEloquentRepository($model);
-        // $rabbitInterface = Mockery::mock(stdClass::class, RabbitInterface::class);
-        $rabbitInterface = new AMQPService();
-        // $rabbitInterface->shouldReceive('producer')->andReturn(true);
+        // $rabbitInterface = new AMQPService();
+        $rabbitInterface = Mockery::mock(stdClass::class, RabbitInterface::class);
+        $rabbitInterface->shouldReceive('producer')->andReturn(true);
         $modelAccount = new ModelsAccount();
         $repositoyMockAccount = new AccountEloquentRepository($modelAccount);
         return new TransferReprovedUseCase($repositoyMock, $repositoyMockAccount, $rabbitInterface);
