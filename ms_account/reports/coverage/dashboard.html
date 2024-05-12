@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/var/www/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/RabbitMQCommand.php.html#13">App\Console\Commands\RabbitMQCommand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Kernel.php.html#8">App\Console\Kernel</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#7">App\Domain\Validation\DomainValidation</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/BadRequestException.php.html#8">App\Exceptions\BadRequestException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#8">App\Exceptions\Handler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#18">App\Http\Controllers\Api\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HealthCheckController.php.html#7">App\Http\Controllers\HealthCheckController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#8">App\Http\Middleware\Authenticate</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#11">App\Http\Middleware\RedirectIfAuthenticated</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/TrustHosts.php.html#7">App\Http\Middleware\TrustHosts</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserRequest.php.html#7">App\Http\Requests\UserRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Transaction.php.html#8">App\Models\Transaction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#8">App\Providers\AuthServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#8">App\Providers\BroadcastServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/EventServiceProvider.php.html#10">App\Providers\EventServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#11">App\Providers\RouteServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#8">App\Repositories\Eloquent\AbstractBaseCrudRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#8">App\Repositories\Eloquent\AbstractDtoModelRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#10">App\Repositories\Eloquent\MessageEloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#11">App\Repositories\Eloquent\NewsLetterEloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#10">App\Repositories\Eloquent\UserEloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/AccountFindByIdUseCase.php.html#10">App\UseCases\Account\AccountFindByIdUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/AccountGetAllByPayerUseCase.php.html#9">App\UseCases\Account\AccountGetAllUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/Transaction/AccountUpdateInputDto.php.html#5">App\UseCases\DTO\Account\AccountUpdateInputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/Transaction/AccountUpdateOutputDto.php.html#5">App\UseCases\DTO\Account\AccountUpdateOutputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterCreateInputDto.php.html#5">App\UseCases\DTO\NewsLetter\NewsLetterCreateInputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterCreateOutputDto.php.html#5">App\UseCases\DTO\NewsLetter\NewsLetterCreateOutputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterUpdateInputDto.php.html#5">App\UseCases\DTO\NewsLetter\NewsLetterUpdateInputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterUpdateOutputDto.php.html#5">App\UseCases\DTO\NewsLetter\NewsLetterUpdateOutputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/User/UserUpdateInputDto.php.html#5">App\UseCases\DTO\User\UserUpdateInputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/User/UserUpdateOutputDto.php.html#5">App\UseCases\DTO\User\UserUpdateOutputDto</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/TransactionReprovedUseCase.php.html#10">App\UseCases\Transaction\TransactionUpdateUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserDeleteUseCase.php.html#12">App\UseCases\User\UserDeleteUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserFindByIdUseCase.php.html#12">App\UseCases\User\UserFindByIdUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserGetAllUseCase.php.html#9">App\UseCases\User\UserGetAllUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserUpdateUseCase.php.html#14">App\UseCases\User\UserUpdateUseCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/MethodsMagicsTrait.php.html#7">App\Traits\MethodsMagicsTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/UuidTrait.php.html#8">App\Traits\UuidTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#12">App\Services\RabbitMQ\AMQPService</a></td><td class="text-right">30%</td></tr>
+       <tr><td><a href="Exceptions/InvalidArgumentException.php.html#8">App\Exceptions\InvalidArgumentException</a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#15">App\Repositories\Eloquent\TransactionEloquentRepository</a></td><td class="text-right">52%</td></tr>
+       <tr><td><a href="Domain/Entities/Entity.php.html#10">App\Domain\Entities\Entity</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Domain/Entities/Account.php.html#15">App\Domain\Entities\Account</a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Domain/Entities/User.php.html#14">App\Domain\Entities\User</a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#16">App\Repositories\Eloquent\AccountEloquentRepository</a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="Domain/ValueObjects/Uuid.php.html#8">App\Domain\ValueObjects\Uuid</a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Http/Requests/TransactionRequest.php.html#7">App\Http\Requests\TransactionRequest</a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#10">App\Repositories\Eloquent\UserEloquentRepository</a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#7">App\Domain\Validation\DomainValidation</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#11">App\Repositories\Eloquent\NewsLetterEloquentRepository</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#10">App\Repositories\Eloquent\MessageEloquentRepository</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#12">App\Services\RabbitMQ\AMQPService</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#8">App\Repositories\Eloquent\AbstractBaseCrudRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#8">App\Repositories\Eloquent\AbstractDtoModelRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#15">App\Repositories\Eloquent\TransactionEloquentRepository</a></td><td class="text-right">57</td></tr>
+       <tr><td><a href="Console/Commands/RabbitMQCommand.php.html#13">App\Console\Commands\RabbitMQCommand</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Domain/Entities/Account.php.html#15">App\Domain\Entities\Account</a></td><td class="text-right">26</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#16">App\Repositories\Eloquent\AccountEloquentRepository</a></td><td class="text-right">23</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#11">App\Http\Middleware\RedirectIfAuthenticated</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Requests/UserRequest.php.html#7">App\Http\Requests\UserRequest</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Traits/MethodsMagicsTrait.php.html#7">App\Traits\MethodsMagicsTrait</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Domain/Entities/User.php.html#14">App\Domain\Entities\User</a></td><td class="text-right">10</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#8">App\Http\Middleware\Authenticate</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#11">App\Providers\RouteServiceProvider</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Domain/ValueObjects/Uuid.php.html#8">App\Domain\ValueObjects\Uuid</a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Requests/TransactionRequest.php.html#7">App\Http\Requests\TransactionRequest</a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/RabbitMQCommand.php.html#29"><abbr title="App\Console\Commands\RabbitMQCommand::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/RabbitMQCommand.php.html#42"><abbr title="App\Console\Commands\RabbitMQCommand::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Kernel.php.html#13"><abbr title="App\Console\Kernel::schedule">schedule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Kernel.php.html#21"><abbr title="App\Console\Kernel::commands">commands</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Entities/Account.php.html#59"><abbr title="App\Domain\Entities\Account::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Entities/Account.php.html#114"><abbr title="App\Domain\Entities\Account::addTransaction">addTransaction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Entities/Account.php.html#119"><abbr title="App\Domain\Entities\Account::removeTransaction">removeTransaction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Entities/Account.php.html#124"><abbr title="App\Domain\Entities\Account::validation">validation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Entities/User.php.html#41"><abbr title="App\Domain\Entities\User::restore">restore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#9"><abbr title="App\Domain\Validation\DomainValidation::notNull">notNull</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#16"><abbr title="App\Domain\Validation\DomainValidation::strMaxLength">strMaxLength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#23"><abbr title="App\Domain\Validation\DomainValidation::strMinLength">strMinLength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#30"><abbr title="App\Domain\Validation\DomainValidation::strCanNullAndMaxLength">strCanNullAndMaxLength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#37"><abbr title="App\Domain\Validation\DomainValidation::strNotNullAndMinAndMaxLength">strNotNullAndMinAndMaxLength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/BadRequestException.php.html#12"><abbr title="App\Exceptions\BadRequestException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/BadRequestException.php.html#21"><abbr title="App\Exceptions\BadRequestException::report">report</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/BadRequestException.php.html#32"><abbr title="App\Exceptions\BadRequestException::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#24"><abbr title="App\Exceptions\Handler::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#31"><abbr title="App\Exceptions\Handler::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/InvalidArgumentException.php.html#21"><abbr title="App\Exceptions\InvalidArgumentException::report">report</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/InvalidArgumentException.php.html#32"><abbr title="App\Exceptions\InvalidArgumentException::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#20"><abbr title="App\Http\Controllers\Api\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#26"><abbr title="App\Http\Controllers\Api\UserController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#41"><abbr title="App\Http\Controllers\Api\UserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#48"><abbr title="App\Http\Controllers\Api\UserController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#63"><abbr title="App\Http\Controllers\Api\UserController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HealthCheckController.php.html#9"><abbr title="App\Http\Controllers\HealthCheckController::health">health</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#13"><abbr title="App\Http\Middleware\Authenticate::redirectTo">redirectTo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#18"><abbr title="App\Http\Middleware\RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/TrustHosts.php.html#14"><abbr title="App\Http\Middleware\TrustHosts::hosts">hosts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserRequest.php.html#12"><abbr title="App\Http\Requests\UserRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserRequest.php.html#22"><abbr title="App\Http\Requests\UserRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Transaction.php.html#45"><abbr title="App\Models\Transaction::payer">payer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Transaction.php.html#50"><abbr title="App\Models\Transaction::payee">payee</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#22"><abbr title="App\Providers\AuthServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#13"><abbr title="App\Providers\BroadcastServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/EventServiceProvider.php.html#26"><abbr title="App\Providers\EventServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/EventServiceProvider.php.html#34"><abbr title="App\Providers\EventServiceProvider::shouldDiscoverEvents">shouldDiscoverEvents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#25"><abbr title="App\Providers\RouteServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#12"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#14"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#19"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#24"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#29"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#37"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#12"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#14"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#19"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::insertModel">insertModel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#24"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::findByIdModel">findByIdModel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#29"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::updateModel">updateModel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#37"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#51"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getIdsListIds">getIdsListIds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#73"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#87"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#14"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#19"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#32"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#38"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#44"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#82"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#87"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::convertToEntity">convertToEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#15"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#20"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#25"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#37"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#43"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#54"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#64"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#75"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#81"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::registerUserOnList">registerUserOnList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#90"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::convertToEntity">convertToEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#48"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getIdsListIds">getIdsListIds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#84"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#113"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#130"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::updateBalance">updateBalance</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#138"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::transactionAproved">transactionAproved</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#143"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::transactionReproved">transactionReproved</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#14"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#19"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#34"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#44"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getIdsListIds">getIdsListIds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#52"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#66"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#80"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#92"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#108"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#114"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findByIdEloquent">findByIdEloquent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#119"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::convertToEntity">convertToEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#131"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findByEmail">findByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#136"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findByCpfCnpj">findByCpfCnpj</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#46"><abbr title="App\Services\RabbitMQ\AMQPService::producerInLote">producerInLote</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#65"><abbr title="App\Services\RabbitMQ\AMQPService::producerFanout">producerFanout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#87"><abbr title="App\Services\RabbitMQ\AMQPService::consumer">consumer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#149"><abbr title="App\Services\RabbitMQ\AMQPService::sslConnection">sslConnection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/AccountFindByIdUseCase.php.html#14"><abbr title="App\UseCases\Account\AccountFindByIdUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/AccountFindByIdUseCase.php.html#19"><abbr title="App\UseCases\Account\AccountFindByIdUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/AccountGetAllByPayerUseCase.php.html#13"><abbr title="App\UseCases\Account\AccountGetAllUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/AccountGetAllByPayerUseCase.php.html#18"><abbr title="App\UseCases\Account\AccountGetAllUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/Transaction/AccountUpdateInputDto.php.html#7"><abbr title="App\UseCases\DTO\Account\AccountUpdateInputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/Transaction/AccountUpdateOutputDto.php.html#7"><abbr title="App\UseCases\DTO\Account\AccountUpdateOutputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterCreateInputDto.php.html#7"><abbr title="App\UseCases\DTO\NewsLetter\NewsLetterCreateInputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterCreateOutputDto.php.html#7"><abbr title="App\UseCases\DTO\NewsLetter\NewsLetterCreateOutputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterUpdateInputDto.php.html#7"><abbr title="App\UseCases\DTO\NewsLetter\NewsLetterUpdateInputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/NewsLetter/NewsLetterUpdateOutputDto.php.html#7"><abbr title="App\UseCases\DTO\NewsLetter\NewsLetterUpdateOutputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/User/UserUpdateInputDto.php.html#7"><abbr title="App\UseCases\DTO\User\UserUpdateInputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/DTO/User/UserUpdateOutputDto.php.html#7"><abbr title="App\UseCases\DTO\User\UserUpdateOutputDto::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/TransactionReprovedUseCase.php.html#13"><abbr title="App\UseCases\Transaction\TransactionUpdateUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/Transaction/TransactionReprovedUseCase.php.html#18"><abbr title="App\UseCases\Transaction\TransactionUpdateUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserDeleteUseCase.php.html#16"><abbr title="App\UseCases\User\UserDeleteUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserDeleteUseCase.php.html#21"><abbr title="App\UseCases\User\UserDeleteUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserFindByIdUseCase.php.html#16"><abbr title="App\UseCases\User\UserFindByIdUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserFindByIdUseCase.php.html#21"><abbr title="App\UseCases\User\UserFindByIdUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserGetAllUseCase.php.html#13"><abbr title="App\UseCases\User\UserGetAllUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserGetAllUseCase.php.html#18"><abbr title="App\UseCases\User\UserGetAllUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserUpdateUseCase.php.html#18"><abbr title="App\UseCases\User\UserUpdateUseCase::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UseCases/User/UserUpdateUseCase.php.html#23"><abbr title="App\UseCases\User\UserUpdateUseCase::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/MethodsMagicsTrait.php.html#10"><abbr title="App\Traits\MethodsMagicsTrait::__get">__get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/MethodsMagicsTrait.php.html#20"><abbr title="App\Traits\MethodsMagicsTrait::id">id</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/MethodsMagicsTrait.php.html#25"><abbr title="App\Traits\MethodsMagicsTrait::createdAt">createdAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/UuidTrait.php.html#10"><abbr title="App\Traits\UuidTrait::bootUuidTrait">bootUuidTrait</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Entities/Entity.php.html#14"><abbr title="App\Domain\Entities\Entity::__get">__get</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Domain/ValueObjects/Uuid.php.html#26"><abbr title="App\Domain\ValueObjects\Uuid::ensureIsValid">ensureIsValid</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#124"><abbr title="App\Services\RabbitMQ\AMQPService::connect">connect</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#119"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::findByIdEloquent">findByIdEloquent</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Domain/ValueObjects/CpfCnpj.php.html#9"><abbr title="App\Domain\ValueObjects\CpfCnpj::__construct">__construct</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Http/Requests/TransactionRequest.php.html#22"><abbr title="App\Http\Requests\TransactionRequest::rules">rules</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#59"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Domain/ValueObjects/CpfCnpj.php.html#32"><abbr title="App\Domain\ValueObjects\CpfCnpj::validCpf">validCpf</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/RabbitMQCommand.php.html#42"><abbr title="App\Console\Commands\RabbitMQCommand::handle">handle</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#37"><abbr title="App\Domain\Validation\DomainValidation::strNotNullAndMinAndMaxLength">strNotNullAndMinAndMaxLength</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#18"><abbr title="App\Http\Middleware\RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#30"><abbr title="App\Domain\Validation\DomainValidation::strCanNullAndMaxLength">strCanNullAndMaxLength</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Requests/UserRequest.php.html#22"><abbr title="App\Http\Requests\UserRequest::rules">rules</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Domain/ValueObjects/CpfCnpj.php.html#32"><abbr title="App\Domain\ValueObjects\CpfCnpj::validCpf">validCpf</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#9"><abbr title="App\Domain\Validation\DomainValidation::notNull">notNull</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#16"><abbr title="App\Domain\Validation\DomainValidation::strMaxLength">strMaxLength</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Domain/Validation/DomainValidation.php.html#23"><abbr title="App\Domain\Validation\DomainValidation::strMinLength">strMinLength</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#13"><abbr title="App\Http\Middleware\Authenticate::redirectTo">redirectTo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#25"><abbr title="App\Providers\RouteServiceProvider::boot">boot</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractBaseCrudRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AbstractDtoModelRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#73"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#87"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/MessageEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#43"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#54"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/NewsLetterEloquentRepository.php.html#81"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::registerUserOnList">registerUserOnList</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#84"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#34"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findById">findById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#52"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#66"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Eloquent/UserEloquentRepository.php.html#80"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#46"><abbr title="App\Services\RabbitMQ\AMQPService::producerInLote">producerInLote</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#87"><abbr title="App\Services\RabbitMQ\AMQPService::consumer">consumer</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#149"><abbr title="App\Services\RabbitMQ\AMQPService::sslConnection">sslConnection</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Traits/MethodsMagicsTrait.php.html#10"><abbr title="App\Traits\MethodsMagicsTrait::__get">__get</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Domain/ValueObjects/CpfCnpj.php.html#9"><abbr title="App\Domain\ValueObjects\CpfCnpj::__construct">__construct</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Services/RabbitMQ/AMQPService.php.html#124"><abbr title="App\Services\RabbitMQ\AMQPService::connect">connect</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Requests/TransactionRequest.php.html#22"><abbr title="App\Http\Requests\TransactionRequest::rules">rules</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/Entities/Entity.php.html#14"><abbr title="App\Domain\Entities\Entity::__get">__get</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/ValueObjects/Uuid.php.html#26"><abbr title="App\Domain\ValueObjects\Uuid::ensureIsValid">ensureIsValid</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Repositories/Eloquent/TransactionEloquentRepository.php.html#119"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::findByIdEloquent">findByIdEloquent</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Repositories/Eloquent/AccountEloquentRepository.php.html#59"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.3</a> using <a href="https://www.php.net/" target="_top">PHP 8.2.15</a> and <a href="https://phpunit.de/">PHPUnit 11.1.3</a> at Sun May 12 22:47:25 UTC 2024.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=11.0.3" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=11.0.3" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=11.0.3" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([38,0,0,0,2,0,1,1,3,2,3,31], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([128,0,0,0,0,0,2,1,1,4,3,92], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,7,"<a href=\"Console\/Commands\/RabbitMQCommand.php.html#13\">App\\Console\\Commands\\RabbitMQCommand<\/a>"],[0,2,"<a href=\"Console\/Kernel.php.html#8\">App\\Console\\Kernel<\/a>"],[70.2127659574468,18,"<a href=\"Domain\/Entities\/Account.php.html#15\">App\\Domain\\Entities\\Account<\/a>"],[66.66666666666666,4,"<a href=\"Domain\/Entities\/Entity.php.html#10\">App\\Domain\\Entities\\Entity<\/a>"],[100,14,"<a href=\"Domain\/Entities\/Transaction.php.html#14\">App\\Domain\\Entities\\Transaction<\/a>"],[71.875,9,"<a href=\"Domain\/Entities\/User.php.html#14\">App\\Domain\\Entities\\User<\/a>"],[0,13,"<a href=\"Domain\/Validation\/DomainValidation.php.html#7\">App\\Domain\\Validation\\DomainValidation<\/a>"],[90,21,"<a href=\"Domain\/ValueObjects\/CpfCnpj.php.html#7\">App\\Domain\\ValueObjects\\CpfCnpj<\/a>"],[100,4,"<a href=\"Domain\/ValueObjects\/Email.php.html#7\">App\\Domain\\ValueObjects\\Email<\/a>"],[80,5,"<a href=\"Domain\/ValueObjects\/Uuid.php.html#8\">App\\Domain\\ValueObjects\\Uuid<\/a>"],[0,3,"<a href=\"Exceptions\/BadRequestException.php.html#8\">App\\Exceptions\\BadRequestException<\/a>"],[100,3,"<a href=\"Exceptions\/EntityValidationException.php.html#8\">App\\Exceptions\\EntityValidationException<\/a>"],[0,2,"<a href=\"Exceptions\/Handler.php.html#8\">App\\Exceptions\\Handler<\/a>"],[33.33333333333333,3,"<a href=\"Exceptions\/InvalidArgumentException.php.html#8\">App\\Exceptions\\InvalidArgumentException<\/a>"],[100,0,"<a href=\"Exceptions\/MethodMagicException.php.html#7\">App\\Exceptions\\MethodMagicException<\/a>"],[100,3,"<a href=\"Exceptions\/NotFoundException.php.html#8\">App\\Exceptions\\NotFoundException<\/a>"],[100,5,"<a href=\"Http\/Controllers\/Api\/AccountController.php.html#18\">App\\Http\\Controllers\\Api\\AccountController<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/TransactionController.php.html#13\">App\\Http\\Controllers\\Api\\TransactionController<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#18\">App\\Http\\Controllers\\Api\\UserController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#9\">App\\Http\\Controllers\\Controller<\/a>"],[0,1,"<a href=\"Http\/Controllers\/HealthCheckController.php.html#7\">App\\Http\\Controllers\\HealthCheckController<\/a>"],[100,0,"<a href=\"Http\/Kernel.php.html#7\">App\\Http\\Kernel<\/a>"],[0,2,"<a href=\"Http\/Middleware\/Authenticate.php.html#8\">App\\Http\\Middleware\\Authenticate<\/a>"],[100,0,"<a href=\"Http\/Middleware\/EncryptCookies.php.html#7\">App\\Http\\Middleware\\EncryptCookies<\/a>"],[100,0,"<a href=\"Http\/Middleware\/PreventRequestsDuringMaintenance.php.html#7\">App\\Http\\Middleware\\PreventRequestsDuringMaintenance<\/a>"],[0,4,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#11\">App\\Http\\Middleware\\RedirectIfAuthenticated<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrimStrings.php.html#7\">App\\Http\\Middleware\\TrimStrings<\/a>"],[0,1,"<a href=\"Http\/Middleware\/TrustHosts.php.html#7\">App\\Http\\Middleware\\TrustHosts<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrustProxies.php.html#8\">App\\Http\\Middleware\\TrustProxies<\/a>"],[100,0,"<a href=\"Http\/Middleware\/ValidateSignature.php.html#7\">App\\Http\\Middleware\\ValidateSignature<\/a>"],[100,0,"<a href=\"Http\/Middleware\/VerifyCsrfToken.php.html#7\">App\\Http\\Middleware\\VerifyCsrfToken<\/a>"],[100,4,"<a href=\"Http\/Requests\/AccountRequest.php.html#7\">App\\Http\\Requests\\AccountRequest<\/a>"],[88.88888888888889,4,"<a href=\"Http\/Requests\/TransactionRequest.php.html#7\">App\\Http\\Requests\\TransactionRequest<\/a>"],[0,4,"<a href=\"Http\/Requests\/UserRequest.php.html#7\">App\\Http\\Requests\\UserRequest<\/a>"],[100,0,"<a href=\"Models\/Account.php.html#8\">App\\Models\\Account<\/a>"],[0,2,"<a href=\"Models\/Transaction.php.html#8\">App\\Models\\Transaction<\/a>"],[100,0,"<a href=\"Models\/User.php.html#12\">App\\Models\\User<\/a>"],[100,2,"<a href=\"Providers\/AppServiceProvider.php.html#15\">App\\Providers\\AppServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/AuthServiceProvider.php.html#8\">App\\Providers\\AuthServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#8\">App\\Providers\\BroadcastServiceProvider<\/a>"],[0,2,"<a href=\"Providers\/EventServiceProvider.php.html#10\">App\\Providers\\EventServiceProvider<\/a>"],[0,2,"<a href=\"Providers\/RouteServiceProvider.php.html#11\">App\\Providers\\RouteServiceProvider<\/a>"],[0,9,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#8\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository<\/a>"],[0,9,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#8\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository<\/a>"],[72.05882352941177,17,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#16\">App\\Repositories\\Eloquent\\AccountEloquentRepository<\/a>"],[0,11,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#10\">App\\Repositories\\Eloquent\\MessageEloquentRepository<\/a>"],[0,13,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#11\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository<\/a>"],[52.702702702702695,19,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#15\">App\\Repositories\\Eloquent\\TransactionEloquentRepository<\/a>"],[0,17,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#10\">App\\Repositories\\Eloquent\\UserEloquentRepository<\/a>"],[30.526315789473685,15,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#12\">App\\Services\\RabbitMQ\\AMQPService<\/a>"],[94.73684210526315,4,"<a href=\"UseCases\/Account\/AccountCreateUseCase.php.html#14\">App\\UseCases\\Account\\AccountCreateUseCase<\/a>"],[100,2,"<a href=\"UseCases\/Account\/AccountDeleteUseCase.php.html#9\">App\\UseCases\\Account\\AccountDeleteUseCase<\/a>"],[0,2,"<a href=\"UseCases\/Transaction\/AccountFindByIdUseCase.php.html#10\">App\\UseCases\\Account\\AccountFindByIdUseCase<\/a>"],[0,2,"<a href=\"UseCases\/Transaction\/AccountGetAllByPayerUseCase.php.html#9\">App\\UseCases\\Account\\AccountGetAllUseCase<\/a>"],[100,2,"<a href=\"UseCases\/Account\/AccountUpdateUseCase.php.html#16\">App\\UseCases\\Account\\AccountUpdateUseCase<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Account\/AccountCreateInputDto.php.html#5\">App\\UseCases\\DTO\\Account\\AccountCreateInputDto<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Account\/AccountCreateOutputDto.php.html#5\">App\\UseCases\\DTO\\Account\\AccountCreateOutputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/Transaction\/AccountUpdateInputDto.php.html#5\">App\\UseCases\\DTO\\Account\\AccountUpdateInputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/Transaction\/AccountUpdateOutputDto.php.html#5\">App\\UseCases\\DTO\\Account\\AccountUpdateOutputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterCreateInputDto.php.html#5\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterCreateInputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterCreateOutputDto.php.html#5\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterCreateOutputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterUpdateInputDto.php.html#5\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterUpdateInputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterUpdateOutputDto.php.html#5\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterUpdateOutputDto<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Transaction\/TransactionCreateInputDto.php.html#5\">App\\UseCases\\DTO\\Transaction\\TransactionCreateInputDto<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Transaction\/TransactionCreateOutputDto.php.html#5\">App\\UseCases\\DTO\\Transaction\\TransactionCreateOutputDto<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Transaction\/TransferAprovedInputDto.php.html#5\">App\\UseCases\\DTO\\Transaction\\TransferAprovedInputDto<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/User\/UserCreateInputDto.php.html#5\">App\\UseCases\\DTO\\User\\UserCreateInputDto<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/User\/UserCreateOutputDto.php.html#5\">App\\UseCases\\DTO\\User\\UserCreateOutputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/User\/UserUpdateInputDto.php.html#5\">App\\UseCases\\DTO\\User\\UserUpdateInputDto<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/User\/UserUpdateOutputDto.php.html#5\">App\\UseCases\\DTO\\User\\UserUpdateOutputDto<\/a>"],[0,2,"<a href=\"UseCases\/Transaction\/TransactionReprovedUseCase.php.html#10\">App\\UseCases\\Transaction\\TransactionUpdateUseCase<\/a>"],[100,2,"<a href=\"UseCases\/Transaction\/TransferAprovedUseCase.php.html#17\">App\\UseCases\\Transaction\\TransferAprovedUseCase<\/a>"],[100,2,"<a href=\"UseCases\/Transaction\/TransferCreateUseCase.php.html#18\">App\\UseCases\\Transaction\\TransferCreateUseCase<\/a>"],[100,2,"<a href=\"UseCases\/Transaction\/TransferReprovedUseCase.php.html#17\">App\\UseCases\\Transaction\\TransferReprovedUseCase<\/a>"],[95,4,"<a href=\"UseCases\/User\/UserCreateUseCase.php.html#14\">App\\UseCases\\User\\UserCreateUseCase<\/a>"],[0,2,"<a href=\"UseCases\/User\/UserDeleteUseCase.php.html#12\">App\\UseCases\\User\\UserDeleteUseCase<\/a>"],[0,2,"<a href=\"UseCases\/User\/UserFindByIdUseCase.php.html#12\">App\\UseCases\\User\\UserFindByIdUseCase<\/a>"],[0,2,"<a href=\"UseCases\/User\/UserGetAllUseCase.php.html#9\">App\\UseCases\\User\\UserGetAllUseCase<\/a>"],[0,2,"<a href=\"UseCases\/User\/UserUpdateUseCase.php.html#14\">App\\UseCases\\User\\UserUpdateUseCase<\/a>"],[0,4,"<a href=\"Traits\/MethodsMagicsTrait.php.html#7\">App\\Traits\\MethodsMagicsTrait<\/a>"],[0,1,"<a href=\"Traits\/UuidTrait.php.html#8\">App\\Traits\\UuidTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Console\/Commands\/RabbitMQCommand.php.html#29\">App\\Console\\Commands\\RabbitMQCommand::__construct<\/a>"],[0,6,"<a href=\"Console\/Commands\/RabbitMQCommand.php.html#42\">App\\Console\\Commands\\RabbitMQCommand::handle<\/a>"],[0,1,"<a href=\"Console\/Kernel.php.html#13\">App\\Console\\Kernel::schedule<\/a>"],[0,1,"<a href=\"Console\/Kernel.php.html#21\">App\\Console\\Kernel::commands<\/a>"],[100,2,"<a href=\"Domain\/Entities\/Account.php.html#17\">App\\Domain\\Entities\\Account::__construct<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Account.php.html#32\">App\\Domain\\Entities\\Account::create<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Account.php.html#45\">App\\Domain\\Entities\\Account::restore<\/a>"],[0,1,"<a href=\"Domain\/Entities\/Account.php.html#59\">App\\Domain\\Entities\\Account::toArray<\/a>"],[100,2,"<a href=\"Domain\/Entities\/Account.php.html#72\">App\\Domain\\Entities\\Account::isShopkeeper<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Account.php.html#81\">App\\Domain\\Entities\\Account::cpfCnpj<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Account.php.html#86\">App\\Domain\\Entities\\Account::email<\/a>"],[100,4,"<a href=\"Domain\/Entities\/Account.php.html#91\">App\\Domain\\Entities\\Account::makeTransfer<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Account.php.html#104\">App\\Domain\\Entities\\Account::receiveTransfer<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Account.php.html#109\">App\\Domain\\Entities\\Account::transferReprovedEstimateValue<\/a>"],[0,1,"<a href=\"Domain\/Entities\/Account.php.html#114\">App\\Domain\\Entities\\Account::addTransaction<\/a>"],[0,1,"<a href=\"Domain\/Entities\/Account.php.html#119\">App\\Domain\\Entities\\Account::removeTransaction<\/a>"],[0,1,"<a href=\"Domain\/Entities\/Account.php.html#124\">App\\Domain\\Entities\\Account::validation<\/a>"],[100,0,"<a href=\"Domain\/Entities\/Entity.php.html#12\">App\\Domain\\Entities\\Entity::toArray<\/a>"],[50,2,"<a href=\"Domain\/Entities\/Entity.php.html#14\">App\\Domain\\Entities\\Entity::__get<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Entity.php.html#24\">App\\Domain\\Entities\\Entity::id<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Entity.php.html#29\">App\\Domain\\Entities\\Entity::createdAt<\/a>"],[100,2,"<a href=\"Domain\/Entities\/Transaction.php.html#16\">App\\Domain\\Entities\\Transaction::__construct<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#30\">App\\Domain\\Entities\\Transaction::create<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#42\">App\\Domain\\Entities\\Transaction::restore<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#56\">App\\Domain\\Entities\\Transaction::toArray<\/a>"],[100,2,"<a href=\"Domain\/Entities\/Transaction.php.html#69\">App\\Domain\\Entities\\Transaction::paymentAproved<\/a>"],[100,2,"<a href=\"Domain\/Entities\/Transaction.php.html#79\">App\\Domain\\Entities\\Transaction::paymentReproved<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#89\">App\\Domain\\Entities\\Transaction::payerId<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#94\">App\\Domain\\Entities\\Transaction::payeeId<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#99\">App\\Domain\\Entities\\Transaction::transactionType<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#104\">App\\Domain\\Entities\\Transaction::transactionStatus<\/a>"],[100,1,"<a href=\"Domain\/Entities\/Transaction.php.html#109\">App\\Domain\\Entities\\Transaction::confirmationAt<\/a>"],[100,2,"<a href=\"Domain\/Entities\/User.php.html#16\">App\\Domain\\Entities\\User::__construct<\/a>"],[100,1,"<a href=\"Domain\/Entities\/User.php.html#29\">App\\Domain\\Entities\\User::create<\/a>"],[0,1,"<a href=\"Domain\/Entities\/User.php.html#41\">App\\Domain\\Entities\\User::restore<\/a>"],[100,1,"<a href=\"Domain\/Entities\/User.php.html#54\">App\\Domain\\Entities\\User::toArray<\/a>"],[100,2,"<a href=\"Domain\/Entities\/User.php.html#66\">App\\Domain\\Entities\\User::isShopkeeper<\/a>"],[100,1,"<a href=\"Domain\/Entities\/User.php.html#75\">App\\Domain\\Entities\\User::cpfCnpj<\/a>"],[100,1,"<a href=\"Domain\/Entities\/User.php.html#80\">App\\Domain\\Entities\\User::email<\/a>"],[0,2,"<a href=\"Domain\/Validation\/DomainValidation.php.html#9\">App\\Domain\\Validation\\DomainValidation::notNull<\/a>"],[0,2,"<a href=\"Domain\/Validation\/DomainValidation.php.html#16\">App\\Domain\\Validation\\DomainValidation::strMaxLength<\/a>"],[0,2,"<a href=\"Domain\/Validation\/DomainValidation.php.html#23\">App\\Domain\\Validation\\DomainValidation::strMinLength<\/a>"],[0,3,"<a href=\"Domain\/Validation\/DomainValidation.php.html#30\">App\\Domain\\Validation\\DomainValidation::strCanNullAndMaxLength<\/a>"],[0,4,"<a href=\"Domain\/Validation\/DomainValidation.php.html#37\">App\\Domain\\Validation\\DomainValidation::strNotNullAndMinAndMaxLength<\/a>"],[85.71428571428571,5,"<a href=\"Domain\/ValueObjects\/CpfCnpj.php.html#9\">App\\Domain\\ValueObjects\\CpfCnpj::__construct<\/a>"],[100,1,"<a href=\"Domain\/ValueObjects\/CpfCnpj.php.html#27\">App\\Domain\\ValueObjects\\CpfCnpj::__toString<\/a>"],[88.88888888888889,6,"<a href=\"Domain\/ValueObjects\/CpfCnpj.php.html#32\">App\\Domain\\ValueObjects\\CpfCnpj::validCpf<\/a>"],[92.3076923076923,9,"<a href=\"Domain\/ValueObjects\/CpfCnpj.php.html#51\">App\\Domain\\ValueObjects\\CpfCnpj::validCnpj<\/a>"],[100,1,"<a href=\"Domain\/ValueObjects\/Email.php.html#9\">App\\Domain\\ValueObjects\\Email::__construct<\/a>"],[100,1,"<a href=\"Domain\/ValueObjects\/Email.php.html#15\">App\\Domain\\ValueObjects\\Email::__toString<\/a>"],[100,2,"<a href=\"Domain\/ValueObjects\/Email.php.html#20\">App\\Domain\\ValueObjects\\Email::validateEmail<\/a>"],[100,1,"<a href=\"Domain\/ValueObjects\/Uuid.php.html#10\">App\\Domain\\ValueObjects\\Uuid::__construct<\/a>"],[100,1,"<a href=\"Domain\/ValueObjects\/Uuid.php.html#16\">App\\Domain\\ValueObjects\\Uuid::random<\/a>"],[100,1,"<a href=\"Domain\/ValueObjects\/Uuid.php.html#21\">App\\Domain\\ValueObjects\\Uuid::__toString<\/a>"],[50,2,"<a href=\"Domain\/ValueObjects\/Uuid.php.html#26\">App\\Domain\\ValueObjects\\Uuid::ensureIsValid<\/a>"],[0,1,"<a href=\"Exceptions\/BadRequestException.php.html#12\">App\\Exceptions\\BadRequestException::__construct<\/a>"],[0,1,"<a href=\"Exceptions\/BadRequestException.php.html#21\">App\\Exceptions\\BadRequestException::report<\/a>"],[0,1,"<a href=\"Exceptions\/BadRequestException.php.html#32\">App\\Exceptions\\BadRequestException::render<\/a>"],[100,1,"<a href=\"Exceptions\/EntityValidationException.php.html#12\">App\\Exceptions\\EntityValidationException::__construct<\/a>"],[100,1,"<a href=\"Exceptions\/EntityValidationException.php.html#21\">App\\Exceptions\\EntityValidationException::report<\/a>"],[100,1,"<a href=\"Exceptions\/EntityValidationException.php.html#32\">App\\Exceptions\\EntityValidationException::render<\/a>"],[0,1,"<a href=\"Exceptions\/Handler.php.html#24\">App\\Exceptions\\Handler::register<\/a>"],[0,1,"<a href=\"Exceptions\/Handler.php.html#31\">App\\Exceptions\\Handler::render<\/a>"],[100,1,"<a href=\"Exceptions\/InvalidArgumentException.php.html#12\">App\\Exceptions\\InvalidArgumentException::__construct<\/a>"],[0,1,"<a href=\"Exceptions\/InvalidArgumentException.php.html#21\">App\\Exceptions\\InvalidArgumentException::report<\/a>"],[0,1,"<a href=\"Exceptions\/InvalidArgumentException.php.html#32\">App\\Exceptions\\InvalidArgumentException::render<\/a>"],[100,1,"<a href=\"Exceptions\/NotFoundException.php.html#12\">App\\Exceptions\\NotFoundException::__construct<\/a>"],[100,1,"<a href=\"Exceptions\/NotFoundException.php.html#21\">App\\Exceptions\\NotFoundException::report<\/a>"],[100,1,"<a href=\"Exceptions\/NotFoundException.php.html#32\">App\\Exceptions\\NotFoundException::render<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/AccountController.php.html#20\">App\\Http\\Controllers\\Api\\AccountController::index<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/AccountController.php.html#26\">App\\Http\\Controllers\\Api\\AccountController::store<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/AccountController.php.html#41\">App\\Http\\Controllers\\Api\\AccountController::show<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/AccountController.php.html#48\">App\\Http\\Controllers\\Api\\AccountController::update<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/AccountController.php.html#63\">App\\Http\\Controllers\\Api\\AccountController::destroy<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/TransactionController.php.html#15\">App\\Http\\Controllers\\Api\\TransactionController::storeTransfer<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#20\">App\\Http\\Controllers\\Api\\UserController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#26\">App\\Http\\Controllers\\Api\\UserController::store<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#41\">App\\Http\\Controllers\\Api\\UserController::show<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#48\">App\\Http\\Controllers\\Api\\UserController::update<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#63\">App\\Http\\Controllers\\Api\\UserController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/HealthCheckController.php.html#9\">App\\Http\\Controllers\\HealthCheckController::health<\/a>"],[0,2,"<a href=\"Http\/Middleware\/Authenticate.php.html#13\">App\\Http\\Middleware\\Authenticate::redirectTo<\/a>"],[0,4,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#18\">App\\Http\\Middleware\\RedirectIfAuthenticated::handle<\/a>"],[0,1,"<a href=\"Http\/Middleware\/TrustHosts.php.html#14\">App\\Http\\Middleware\\TrustHosts::hosts<\/a>"],[100,1,"<a href=\"Http\/Requests\/AccountRequest.php.html#12\">App\\Http\\Requests\\AccountRequest::authorize<\/a>"],[100,3,"<a href=\"Http\/Requests\/AccountRequest.php.html#22\">App\\Http\\Requests\\AccountRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/TransactionRequest.php.html#12\">App\\Http\\Requests\\TransactionRequest::authorize<\/a>"],[87.5,3,"<a href=\"Http\/Requests\/TransactionRequest.php.html#22\">App\\Http\\Requests\\TransactionRequest::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/UserRequest.php.html#12\">App\\Http\\Requests\\UserRequest::authorize<\/a>"],[0,3,"<a href=\"Http\/Requests\/UserRequest.php.html#22\">App\\Http\\Requests\\UserRequest::rules<\/a>"],[0,1,"<a href=\"Models\/Transaction.php.html#45\">App\\Models\\Transaction::payer<\/a>"],[0,1,"<a href=\"Models\/Transaction.php.html#50\">App\\Models\\Transaction::payee<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#20\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#31\">App\\Providers\\AppServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/AuthServiceProvider.php.html#22\">App\\Providers\\AuthServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#13\">App\\Providers\\BroadcastServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/EventServiceProvider.php.html#26\">App\\Providers\\EventServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/EventServiceProvider.php.html#34\">App\\Providers\\EventServiceProvider::shouldDiscoverEvents<\/a>"],[0,2,"<a href=\"Providers\/RouteServiceProvider.php.html#25\">App\\Providers\\RouteServiceProvider::boot<\/a>"],[0,0,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#12\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::model<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#14\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#19\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::insert<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#24\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::findById<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#29\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::update<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#37\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::delete<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#43\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::getAll<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/AbstractBaseCrudRepository.php.html#57\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::getAllPaginate<\/a>"],[0,0,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#12\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::model<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#14\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#19\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::insertModel<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#24\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::findByIdModel<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#29\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::updateModel<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#37\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::delete<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#43\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::getAll<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/AbstractDtoModelRepository.php.html#57\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::getAllPaginate<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#20\">App\\Repositories\\Eloquent\\AccountEloquentRepository::__construct<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#25\">App\\Repositories\\Eloquent\\AccountEloquentRepository::insert<\/a>"],[100,2,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#41\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#51\">App\\Repositories\\Eloquent\\AccountEloquentRepository::getIdsListIds<\/a>"],[87.5,2,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#59\">App\\Repositories\\Eloquent\\AccountEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#73\">App\\Repositories\\Eloquent\\AccountEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#87\">App\\Repositories\\Eloquent\\AccountEloquentRepository::paginate<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#99\">App\\Repositories\\Eloquent\\AccountEloquentRepository::update<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#116\">App\\Repositories\\Eloquent\\AccountEloquentRepository::delete<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#122\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findByIdEloquent<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#127\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findByEmail<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#132\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findByCpfCnpj<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/AccountEloquentRepository.php.html#137\">App\\Repositories\\Eloquent\\AccountEloquentRepository::convertObjectToEntity<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#14\">App\\Repositories\\Eloquent\\MessageEloquentRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#19\">App\\Repositories\\Eloquent\\MessageEloquentRepository::insert<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#32\">App\\Repositories\\Eloquent\\MessageEloquentRepository::delete<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#38\">App\\Repositories\\Eloquent\\MessageEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#44\">App\\Repositories\\Eloquent\\MessageEloquentRepository::update<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#56\">App\\Repositories\\Eloquent\\MessageEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#70\">App\\Repositories\\Eloquent\\MessageEloquentRepository::getAllPaginate<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#82\">App\\Repositories\\Eloquent\\MessageEloquentRepository::model<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/MessageEloquentRepository.php.html#87\">App\\Repositories\\Eloquent\\MessageEloquentRepository::convertToEntity<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#15\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#20\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::model<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#25\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::insert<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#37\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::findById<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#43\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#54\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::getAll<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#64\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::update<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#75\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::delete<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#81\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::registerUserOnList<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/NewsLetterEloquentRepository.php.html#90\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::convertToEntity<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#17\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::__construct<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#23\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::insert<\/a>"],[100,2,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#38\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#48\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::getIdsListIds<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#56\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#70\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#84\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::paginate<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#96\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::update<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#113\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::delete<\/a>"],[75,2,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#119\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::findByIdEloquent<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#130\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::updateBalance<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#138\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::transactionAproved<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#143\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::transactionReproved<\/a>"],[100,1,"<a href=\"Repositories\/Eloquent\/TransactionEloquentRepository.php.html#148\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::convertObjectToEntity<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#14\">App\\Repositories\\Eloquent\\UserEloquentRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#19\">App\\Repositories\\Eloquent\\UserEloquentRepository::insert<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#34\">App\\Repositories\\Eloquent\\UserEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#44\">App\\Repositories\\Eloquent\\UserEloquentRepository::getIdsListIds<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#52\">App\\Repositories\\Eloquent\\UserEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#66\">App\\Repositories\\Eloquent\\UserEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#80\">App\\Repositories\\Eloquent\\UserEloquentRepository::paginate<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#92\">App\\Repositories\\Eloquent\\UserEloquentRepository::update<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#108\">App\\Repositories\\Eloquent\\UserEloquentRepository::delete<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#114\">App\\Repositories\\Eloquent\\UserEloquentRepository::findByIdEloquent<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#119\">App\\Repositories\\Eloquent\\UserEloquentRepository::convertToEntity<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#131\">App\\Repositories\\Eloquent\\UserEloquentRepository::findByEmail<\/a>"],[0,1,"<a href=\"Repositories\/Eloquent\/UserEloquentRepository.php.html#136\">App\\Repositories\\Eloquent\\UserEloquentRepository::findByCpfCnpj<\/a>"],[100,1,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#18\">App\\Services\\RabbitMQ\\AMQPService::__construct<\/a>"],[100,1,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#27\">App\\Services\\RabbitMQ\\AMQPService::producer<\/a>"],[0,2,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#46\">App\\Services\\RabbitMQ\\AMQPService::producerInLote<\/a>"],[0,1,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#65\">App\\Services\\RabbitMQ\\AMQPService::producerFanout<\/a>"],[0,2,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#87\">App\\Services\\RabbitMQ\\AMQPService::consumer<\/a>"],[66.66666666666666,3,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#124\">App\\Services\\RabbitMQ\\AMQPService::connect<\/a>"],[100,1,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#139\">App\\Services\\RabbitMQ\\AMQPService::closeChannel<\/a>"],[100,1,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#144\">App\\Services\\RabbitMQ\\AMQPService::closeConnection<\/a>"],[0,2,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#149\">App\\Services\\RabbitMQ\\AMQPService::sslConnection<\/a>"],[100,1,"<a href=\"Services\/RabbitMQ\/AMQPService.php.html#182\">App\\Services\\RabbitMQ\\AMQPService::streamConnection<\/a>"],[100,1,"<a href=\"UseCases\/Account\/AccountCreateUseCase.php.html#16\">App\\UseCases\\Account\\AccountCreateUseCase::__construct<\/a>"],[94.44444444444444,3,"<a href=\"UseCases\/Account\/AccountCreateUseCase.php.html#22\">App\\UseCases\\Account\\AccountCreateUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/Account\/AccountDeleteUseCase.php.html#13\">App\\UseCases\\Account\\AccountDeleteUseCase::__construct<\/a>"],[100,1,"<a href=\"UseCases\/Account\/AccountDeleteUseCase.php.html#18\">App\\UseCases\\Account\\AccountDeleteUseCase::execute<\/a>"],[0,1,"<a href=\"UseCases\/Transaction\/AccountFindByIdUseCase.php.html#14\">App\\UseCases\\Account\\AccountFindByIdUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/Transaction\/AccountFindByIdUseCase.php.html#19\">App\\UseCases\\Account\\AccountFindByIdUseCase::execute<\/a>"],[0,1,"<a href=\"UseCases\/Transaction\/AccountGetAllByPayerUseCase.php.html#13\">App\\UseCases\\Account\\AccountGetAllUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/Transaction\/AccountGetAllByPayerUseCase.php.html#18\">App\\UseCases\\Account\\AccountGetAllUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/Account\/AccountUpdateUseCase.php.html#20\">App\\UseCases\\Account\\AccountUpdateUseCase::__construct<\/a>"],[100,1,"<a href=\"UseCases\/Account\/AccountUpdateUseCase.php.html#25\">App\\UseCases\\Account\\AccountUpdateUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Account\/AccountCreateInputDto.php.html#7\">App\\UseCases\\DTO\\Account\\AccountCreateInputDto::__construct<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Account\/AccountCreateOutputDto.php.html#7\">App\\UseCases\\DTO\\Account\\AccountCreateOutputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/Transaction\/AccountUpdateInputDto.php.html#7\">App\\UseCases\\DTO\\Account\\AccountUpdateInputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/Transaction\/AccountUpdateOutputDto.php.html#7\">App\\UseCases\\DTO\\Account\\AccountUpdateOutputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterCreateInputDto.php.html#7\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterCreateInputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterCreateOutputDto.php.html#7\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterCreateOutputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterUpdateInputDto.php.html#7\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterUpdateInputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/NewsLetter\/NewsLetterUpdateOutputDto.php.html#7\">App\\UseCases\\DTO\\NewsLetter\\NewsLetterUpdateOutputDto::__construct<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Transaction\/TransactionCreateInputDto.php.html#7\">App\\UseCases\\DTO\\Transaction\\TransactionCreateInputDto::__construct<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Transaction\/TransactionCreateOutputDto.php.html#7\">App\\UseCases\\DTO\\Transaction\\TransactionCreateOutputDto::__construct<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/Transaction\/TransferAprovedInputDto.php.html#7\">App\\UseCases\\DTO\\Transaction\\TransferAprovedInputDto::__construct<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/User\/UserCreateInputDto.php.html#7\">App\\UseCases\\DTO\\User\\UserCreateInputDto::__construct<\/a>"],[100,1,"<a href=\"UseCases\/DTO\/User\/UserCreateOutputDto.php.html#7\">App\\UseCases\\DTO\\User\\UserCreateOutputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/User\/UserUpdateInputDto.php.html#7\">App\\UseCases\\DTO\\User\\UserUpdateInputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/DTO\/User\/UserUpdateOutputDto.php.html#7\">App\\UseCases\\DTO\\User\\UserUpdateOutputDto::__construct<\/a>"],[0,1,"<a href=\"UseCases\/Transaction\/TransactionReprovedUseCase.php.html#13\">App\\UseCases\\Transaction\\TransactionUpdateUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/Transaction\/TransactionReprovedUseCase.php.html#18\">App\\UseCases\\Transaction\\TransactionUpdateUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/Transaction\/TransferAprovedUseCase.php.html#19\">App\\UseCases\\Transaction\\TransferAprovedUseCase::__construct<\/a>"],[100,1,"<a href=\"UseCases\/Transaction\/TransferAprovedUseCase.php.html#26\">App\\UseCases\\Transaction\\TransferAprovedUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/Transaction\/TransferCreateUseCase.php.html#20\">App\\UseCases\\Transaction\\TransferCreateUseCase::__construct<\/a>"],[100,1,"<a href=\"UseCases\/Transaction\/TransferCreateUseCase.php.html#27\">App\\UseCases\\Transaction\\TransferCreateUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/Transaction\/TransferReprovedUseCase.php.html#19\">App\\UseCases\\Transaction\\TransferReprovedUseCase::__construct<\/a>"],[100,1,"<a href=\"UseCases\/Transaction\/TransferReprovedUseCase.php.html#26\">App\\UseCases\\Transaction\\TransferReprovedUseCase::execute<\/a>"],[100,1,"<a href=\"UseCases\/User\/UserCreateUseCase.php.html#16\">App\\UseCases\\User\\UserCreateUseCase::__construct<\/a>"],[94.44444444444444,3,"<a href=\"UseCases\/User\/UserCreateUseCase.php.html#24\">App\\UseCases\\User\\UserCreateUseCase::execute<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserDeleteUseCase.php.html#16\">App\\UseCases\\User\\UserDeleteUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserDeleteUseCase.php.html#21\">App\\UseCases\\User\\UserDeleteUseCase::execute<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserFindByIdUseCase.php.html#16\">App\\UseCases\\User\\UserFindByIdUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserFindByIdUseCase.php.html#21\">App\\UseCases\\User\\UserFindByIdUseCase::execute<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserGetAllUseCase.php.html#13\">App\\UseCases\\User\\UserGetAllUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserGetAllUseCase.php.html#18\">App\\UseCases\\User\\UserGetAllUseCase::execute<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserUpdateUseCase.php.html#18\">App\\UseCases\\User\\UserUpdateUseCase::__construct<\/a>"],[0,1,"<a href=\"UseCases\/User\/UserUpdateUseCase.php.html#23\">App\\UseCases\\User\\UserUpdateUseCase::execute<\/a>"],[0,2,"<a href=\"Traits\/MethodsMagicsTrait.php.html#10\">App\\Traits\\MethodsMagicsTrait::__get<\/a>"],[0,1,"<a href=\"Traits\/MethodsMagicsTrait.php.html#20\">App\\Traits\\MethodsMagicsTrait::id<\/a>"],[0,1,"<a href=\"Traits\/MethodsMagicsTrait.php.html#25\">App\\Traits\\MethodsMagicsTrait::createdAt<\/a>"],[0,1,"<a href=\"Traits\/UuidTrait.php.html#10\">App\\Traits\\UuidTrait::bootUuidTrait<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

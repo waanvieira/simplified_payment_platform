@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/app/Repositories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/var/www/app</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Repositories</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#8">App\Repositories\Eloquent\AbstractBaseCrudRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#8">App\Repositories\Eloquent\AbstractDtoModelRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#10">App\Repositories\Eloquent\MessageEloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#11">App\Repositories\Eloquent\NewsLetterEloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#10">App\Repositories\Eloquent\UserEloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#15">App\Repositories\Eloquent\TransactionEloquentRepository</a></td><td class="text-right">52%</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#16">App\Repositories\Eloquent\AccountEloquentRepository</a></td><td class="text-right">72%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#10">App\Repositories\Eloquent\UserEloquentRepository</a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#11">App\Repositories\Eloquent\NewsLetterEloquentRepository</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#10">App\Repositories\Eloquent\MessageEloquentRepository</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#8">App\Repositories\Eloquent\AbstractBaseCrudRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#8">App\Repositories\Eloquent\AbstractDtoModelRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#15">App\Repositories\Eloquent\TransactionEloquentRepository</a></td><td class="text-right">57</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#16">App\Repositories\Eloquent\AccountEloquentRepository</a></td><td class="text-right">23</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#12"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#14"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#19"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#24"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#29"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#37"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#12"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#14"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#19"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::insertModel">insertModel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#24"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::findByIdModel">findByIdModel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#29"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::updateModel">updateModel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#37"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#51"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getIdsListIds">getIdsListIds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#73"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#87"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#14"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#19"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#32"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#38"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#44"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#82"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#87"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::convertToEntity">convertToEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#15"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#20"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::model">model</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#25"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#37"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#43"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#54"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#64"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#75"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#81"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::registerUserOnList">registerUserOnList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#90"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::convertToEntity">convertToEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#48"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getIdsListIds">getIdsListIds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#84"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#113"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#130"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::updateBalance">updateBalance</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#138"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::transactionAproved">transactionAproved</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#143"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::transactionReproved">transactionReproved</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#14"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#19"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#34"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#44"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getIdsListIds">getIdsListIds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#52"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#66"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#80"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#92"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#108"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#114"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findByIdEloquent">findByIdEloquent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#119"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::convertToEntity">convertToEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#131"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findByEmail">findByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#136"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findByCpfCnpj">findByCpfCnpj</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#119"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::findByIdEloquent">findByIdEloquent</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#59"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">87%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/AbstractBaseCrudRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractBaseCrudRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#43"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/AbstractDtoModelRepository.php.html#57"><abbr title="App\Repositories\Eloquent\AbstractDtoModelRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#73"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#87"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/MessageEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\MessageEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#43"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#54"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/NewsLetterEloquentRepository.php.html#81"><abbr title="App\Repositories\Eloquent\NewsLetterEloquentRepository::registerUserOnList">registerUserOnList</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#56"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#70"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#84"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#34"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::findById">findById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#52"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#66"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/UserEloquentRepository.php.html#80"><abbr title="App\Repositories\Eloquent\UserEloquentRepository::paginate">paginate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Eloquent/TransactionEloquentRepository.php.html#119"><abbr title="App\Repositories\Eloquent\TransactionEloquentRepository::findByIdEloquent">findByIdEloquent</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Eloquent/AccountEloquentRepository.php.html#59"><abbr title="App\Repositories\Eloquent\AccountEloquentRepository::getAllPaginate">getAllPaginate</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.3</a> using <a href="https://www.php.net/" target="_top">PHP 8.2.15</a> and <a href="https://phpunit.de/">PHPUnit 11.1.3</a> at Sun May 12 22:47:25 UTC 2024.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js?v=11.0.3" type="text/javascript"></script>
+  <script src="../_js/d3.min.js?v=11.0.3" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js?v=11.0.3" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([5,0,0,0,0,0,1,0,1,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([59,0,0,0,0,0,0,0,1,1,0,14], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,9,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#8\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository<\/a>"],[0,9,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#8\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository<\/a>"],[72.05882352941177,17,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#16\">App\\Repositories\\Eloquent\\AccountEloquentRepository<\/a>"],[0,11,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#10\">App\\Repositories\\Eloquent\\MessageEloquentRepository<\/a>"],[0,13,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#11\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository<\/a>"],[52.702702702702695,19,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#15\">App\\Repositories\\Eloquent\\TransactionEloquentRepository<\/a>"],[0,17,"<a href=\"Eloquent\/UserEloquentRepository.php.html#10\">App\\Repositories\\Eloquent\\UserEloquentRepository<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,0,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#12\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::model<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#14\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::__construct<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#19\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::insert<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#24\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::findById<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#29\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::update<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#37\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::delete<\/a>"],[0,2,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#43\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::getAll<\/a>"],[0,2,"<a href=\"Eloquent\/AbstractBaseCrudRepository.php.html#57\">App\\Repositories\\Eloquent\\AbstractBaseCrudRepository::getAllPaginate<\/a>"],[0,0,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#12\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::model<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#14\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::__construct<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#19\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::insertModel<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#24\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::findByIdModel<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#29\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::updateModel<\/a>"],[0,1,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#37\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::delete<\/a>"],[0,2,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#43\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::getAll<\/a>"],[0,2,"<a href=\"Eloquent\/AbstractDtoModelRepository.php.html#57\">App\\Repositories\\Eloquent\\AbstractDtoModelRepository::getAllPaginate<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#20\">App\\Repositories\\Eloquent\\AccountEloquentRepository::__construct<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#25\">App\\Repositories\\Eloquent\\AccountEloquentRepository::insert<\/a>"],[100,2,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#41\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#51\">App\\Repositories\\Eloquent\\AccountEloquentRepository::getIdsListIds<\/a>"],[87.5,2,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#59\">App\\Repositories\\Eloquent\\AccountEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#73\">App\\Repositories\\Eloquent\\AccountEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#87\">App\\Repositories\\Eloquent\\AccountEloquentRepository::paginate<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#99\">App\\Repositories\\Eloquent\\AccountEloquentRepository::update<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#116\">App\\Repositories\\Eloquent\\AccountEloquentRepository::delete<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#122\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findByIdEloquent<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#127\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findByEmail<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#132\">App\\Repositories\\Eloquent\\AccountEloquentRepository::findByCpfCnpj<\/a>"],[100,1,"<a href=\"Eloquent\/AccountEloquentRepository.php.html#137\">App\\Repositories\\Eloquent\\AccountEloquentRepository::convertObjectToEntity<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#14\">App\\Repositories\\Eloquent\\MessageEloquentRepository::__construct<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#19\">App\\Repositories\\Eloquent\\MessageEloquentRepository::insert<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#32\">App\\Repositories\\Eloquent\\MessageEloquentRepository::delete<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#38\">App\\Repositories\\Eloquent\\MessageEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#44\">App\\Repositories\\Eloquent\\MessageEloquentRepository::update<\/a>"],[0,2,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#56\">App\\Repositories\\Eloquent\\MessageEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#70\">App\\Repositories\\Eloquent\\MessageEloquentRepository::getAllPaginate<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#82\">App\\Repositories\\Eloquent\\MessageEloquentRepository::model<\/a>"],[0,1,"<a href=\"Eloquent\/MessageEloquentRepository.php.html#87\">App\\Repositories\\Eloquent\\MessageEloquentRepository::convertToEntity<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#15\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::__construct<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#20\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::model<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#25\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::insert<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#37\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::findById<\/a>"],[0,2,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#43\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#54\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::getAll<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#64\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::update<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#75\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::delete<\/a>"],[0,2,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#81\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::registerUserOnList<\/a>"],[0,1,"<a href=\"Eloquent\/NewsLetterEloquentRepository.php.html#90\">App\\Repositories\\Eloquent\\NewsLetterEloquentRepository::convertToEntity<\/a>"],[100,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#17\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::__construct<\/a>"],[100,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#23\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::insert<\/a>"],[100,2,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#38\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#48\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::getIdsListIds<\/a>"],[0,2,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#56\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#70\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#84\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::paginate<\/a>"],[100,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#96\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::update<\/a>"],[0,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#113\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::delete<\/a>"],[75,2,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#119\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::findByIdEloquent<\/a>"],[0,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#130\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::updateBalance<\/a>"],[0,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#138\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::transactionAproved<\/a>"],[0,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#143\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::transactionReproved<\/a>"],[100,1,"<a href=\"Eloquent\/TransactionEloquentRepository.php.html#148\">App\\Repositories\\Eloquent\\TransactionEloquentRepository::convertObjectToEntity<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#14\">App\\Repositories\\Eloquent\\UserEloquentRepository::__construct<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#19\">App\\Repositories\\Eloquent\\UserEloquentRepository::insert<\/a>"],[0,2,"<a href=\"Eloquent\/UserEloquentRepository.php.html#34\">App\\Repositories\\Eloquent\\UserEloquentRepository::findById<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#44\">App\\Repositories\\Eloquent\\UserEloquentRepository::getIdsListIds<\/a>"],[0,2,"<a href=\"Eloquent\/UserEloquentRepository.php.html#52\">App\\Repositories\\Eloquent\\UserEloquentRepository::getAllPaginate<\/a>"],[0,2,"<a href=\"Eloquent\/UserEloquentRepository.php.html#66\">App\\Repositories\\Eloquent\\UserEloquentRepository::getAll<\/a>"],[0,2,"<a href=\"Eloquent\/UserEloquentRepository.php.html#80\">App\\Repositories\\Eloquent\\UserEloquentRepository::paginate<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#92\">App\\Repositories\\Eloquent\\UserEloquentRepository::update<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#108\">App\\Repositories\\Eloquent\\UserEloquentRepository::delete<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#114\">App\\Repositories\\Eloquent\\UserEloquentRepository::findByIdEloquent<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#119\">App\\Repositories\\Eloquent\\UserEloquentRepository::convertToEntity<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#131\">App\\Repositories\\Eloquent\\UserEloquentRepository::findByEmail<\/a>"],[0,1,"<a href=\"Eloquent\/UserEloquentRepository.php.html#136\">App\\Repositories\\Eloquent\\UserEloquentRepository::findByCpfCnpj<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
