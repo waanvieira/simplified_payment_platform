@@ -9,7 +9,8 @@ services:
   app_account:
     build: ./ms_account
     container_name: app_account
-    entrypoint: ["sh", "entrypoint.sh"]
+    entrypoint: dockerize -template ./.env.example:.env -wait tcp://db_mysql_account:3306 -timeout 40s
+    command: ["sh", "entrypoint.sh"]
     volumes:
       - ./ms_account/:/var/www
     depends_on:
@@ -46,7 +47,8 @@ services:
 
   app_transaction:
     build: ./ms_transactions
-    entrypoint: ["sh", "entrypoint.sh"]
+    entrypoint: dockerize -template ./.env.example:.env -wait tcp://db_mysql_account:3306 -timeout 40s
+    command: ["sh", "entrypoint.sh"]
     container_name: app_transaction
     volumes:
       - ./ms_transactions/:/var/www
@@ -65,7 +67,8 @@ services:
 
   app_notification:
     build: ./ms_notification
-    entrypoint: ["sh", "entrypoint.sh"]
+    entrypoint: dockerize -template ./.env.example:.env -wait tcp://db_mysql_account:3306 -timeout 40s
+    command: ["sh", "entrypoint.sh"]
     container_name: app_notification
     volumes:
       - ./ms_notification/:/var/www
@@ -103,56 +106,3 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
-
-    # env_file: .env
-
-# services:
-#   organization:
-#     build: ./organization-service
-#     ports:
-#       - "8083:8083"
-#     networks:
-#       - organization-mysql
-#       - organization-user
-#       - organization-site
-#     depends_on:
-#       - mysqldb
-#       - user
-#       - site
-
-#   site:
-#     build: ./site-service
-#     ports:
-#       - "8082:8082"
-#     networks:
-#       - organization-mysql
-#       - site-user
-#       - organization-site
-#     depends_on:
-#       - mysqldb
-#       - user
- 
-#   user:
-#     build: ./user-service
-#     ports:
-#       - "8081:8081"
-#     networks:
-#       - site-user
-#       - organization-user
-#       - organization-mysql
-#     depends_on:
-#       - mysqldb
-
-#   mysqldb:
-#     image: mysql:8
-#     networks:
-#       - organization-mysql
-#     environment:
-#       - MYSQL_ROOT_PASSWORD=root
-#       - MYSQL_DATABASE=organizationdb
-
-# networks:
-#   organization-mysql:
-#   site-user:
-#   organization-user:
-#   organization-site:

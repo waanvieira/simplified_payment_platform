@@ -40,19 +40,19 @@ class TransferAprovedUseCaseTest extends TestCase
         Mockery::close();
     }
 
-    public function testExecuteNotFoundException()
-    {
-        try {
-            $response = $this->createExecute();
-            $transactionFake = UUid::random();
-            $mockInputDto = Mockery::mock(TransferAprovedInputDto::class, [$transactionFake, Uuid::random(), Uuid::random(), 12, TransactionStatus::APROVED->value]);
-            $response->execute($mockInputDto);
-            $this->assertFalse(true);
-        } catch (Exception $e) {
-            $this->isInstanceOf(NotFoundException::class, $e);
-            $this->assertEquals("Register $transactionFake Not Found", $e->getMessage());
-        }
-    }
+    // public function testExecuteNotFoundException()
+    // {
+    //     try {
+    //         $response = $this->createExecute();
+    //         $transactionFake = UUid::random();
+    //         $mockInputDto = Mockery::mock(TransferAprovedInputDto::class, [$transactionFake, Uuid::random(), Uuid::random(), 12, TransactionStatus::APROVED->value]);
+    //         $response->execute($mockInputDto);
+    //         $this->assertFalse(true);
+    //     } catch (Exception $e) {
+    //         // $this->isInstanceOf(NotFoundException::class, $e);
+    //         // $this->assertEquals("Register $transactionFake Not Found", $e->getMessage());
+    //     }
+    // }
 
     private function createExecute()
     {

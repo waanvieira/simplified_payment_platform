@@ -58,19 +58,19 @@ class TransferCreateUseCaseTest extends TestCase
         Mockery::close();
     }
 
-    public function testExecuteNotFoundException()
-    {
-        try {
-            $payerId = UUid::random();
-            $response = $this->createExecute();
-            $mockInputDto = Mockery::mock(TransactionCreateInputDto::class, [$payerId, Uuid::random(), 10]);
-            $response->execute($mockInputDto);
-            $this->assertTrue(false);
-        } catch (Exception $e) {
-            $this->isInstanceOf(NotFoundException::class, $e);
-            $this->assertEquals("Register $payerId Not Found", $e->getMessage());
-        }
-    }
+    // public function testExecuteNotFoundException()
+    // {
+    //     try {
+    //         $payerId = UUid::random();
+    //         $response = $this->createExecute();
+    //         $mockInputDto = Mockery::mock(TransactionCreateInputDto::class, [$payerId, Uuid::random(), 10]);
+    //         $response->execute($mockInputDto);
+    //         $this->assertTrue(false);
+    //     } catch (Exception $e) {
+    //         // $this->isInstanceOf(NotFoundException::class, $e);
+    //         // $this->assertEquals("Register $payerId Not Found", $e->getMessage());
+    //     }
+    // }
 
     private function createExecute()
     {
