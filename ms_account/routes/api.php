@@ -10,8 +10,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::prefix('v1')->group(function () {
-    Route::apiResource('users', UserController::class);
-    Route::apiResource('accounts', AccountController::class);
-    Route::post('transfer', [TransactionController::class, 'storeTransfer'])->name('transfer');
-});
+Route::apiResource('users', UserController::class);
+Route::apiResource('accounts', AccountController::class);
+Route::post('transfer', [TransactionController::class, 'storeTransfer'])->name('transfer');
