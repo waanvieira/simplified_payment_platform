@@ -1,0 +1,158 @@
+version: "3.8"
+
+networks:
+  default:
+    external:
+      name: simplified-payment-network
+
+services:
+  app_account:
+    build: ./ms_account
+    container_name: app_account
+    entrypoint: ["sh", "entrypoint.sh"]
+    volumes:
+      - ./ms_account/:/var/www
+    depends_on:
+      - db_mysql_account
+      - app-redis
+
+  db_mysql_account:
+    image: mysql:8.0.30
+    command: --innodb-use-native-aio=0
+    restart: always
+    tty: true
+    ports:
+      - "3306"
+    volumes:
+      - "./mysql/dbdata:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: account_db
+      MYSQL_ROOT_PASSWORD: root
+      
+  app-nginx:
+    build: ./ms_account/.docker/nginx
+    restart: always
+    ports:
+      - "8001:80"
+    volumes:
+      - ./ms_account:/var/www
+    depends_on:
+      - app_account
+
+  app-redis:
+    image: redis:alpine
+    expose:
+      - 6379
+
+  app_transaction:
+    build: ./ms_transactions
+    entrypoint: ["sh", "entrypoint.sh"]
+    container_name: app_transaction
+    volumes:
+      - ./ms_transactions/:/var/www
+    depends_on:
+      - app-redis
+
+  app-nginx-transactions:
+    build: ./ms_transactions/.docker/nginx
+    restart: always
+    ports:
+      - "8002:80"
+    volumes:
+      - ./ms_transactions/:/var/www
+    depends_on:
+      - app_transaction
+
+  app_notification:
+    build: ./ms_notification
+    entrypoint: ["sh", "entrypoint.sh"]
+    container_name: app_notification
+    volumes:
+      - ./ms_notification/:/var/www
+    depends_on:
+      - app-redis
+
+  app-nginx-notification:
+    build: ./ms_notification/.docker/nginx
+    restart: always
+    ports:
+      - "8003:80"
+    volumes:
+      - ./ms_notification/:/var/www
+    depends_on:
+      - app_notification
+
+  ##### SERVICES ###########
+  adminer:
+    image: adminer
+    ports:
+    - 8083:8080
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbit'
+    ports: 
+      - 55672:5672
+      - 55674:5673
+      - 15772:15672
+    networks:
+      - default
+    volumes:
+        - ./rabbitmq/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/mnesia
+        - ./rabbitmq/.docker-conf/rabbitmq/log/:/var/log/rabbitmq        
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+    # env_file: .env
+
+# services:
+#   organization:
+#     build: ./organization-service
+#     ports:
+#       - "8083:8083"
+#     networks:
+#       - organization-mysql
+#       - organization-user
+#       - organization-site
+#     depends_on:
+#       - mysqldb
+#       - user
+#       - site
+
+#   site:
+#     build: ./site-service
+#     ports:
+#       - "8082:8082"
+#     networks:
+#       - organization-mysql
+#       - site-user
+#       - organization-site
+#     depends_on:
+#       - mysqldb
+#       - user
+ 
+#   user:
+#     build: ./user-service
+#     ports:
+#       - "8081:8081"
+#     networks:
+#       - site-user
+#       - organization-user
+#       - organization-mysql
+#     depends_on:
+#       - mysqldb
+
+#   mysqldb:
+#     image: mysql:8
+#     networks:
+#       - organization-mysql
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root
+#       - MYSQL_DATABASE=organizationdb
+
+# networks:
+#   organization-mysql:
+#   site-user:
+#   organization-user:
+#   organization-site:
