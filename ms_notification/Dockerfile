@@ -35,7 +35,7 @@ COPY .docker/entrypoint.sh /var/www/entrypoint.sh
 
 RUN chmod +x entrypoint.sh
 
-EXPOSE 9000
+EXPOSE 9003
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
