@@ -33,6 +33,10 @@ cd simplified_payment_platform
 # executar o projeto
 docker-compose up -d
 
+# Executar testes
+
+docker-compose exec app_account vendor/bin/phpunit
+
 # Executar o consumer do ms_account
 docker-compose exec app_account php artisan rabbitmq:consumer
 
