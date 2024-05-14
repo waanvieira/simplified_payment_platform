@@ -4,7 +4,7 @@
 </p>
 
 # Sobre o projeto
-Projeto simplificado de transferências entre contas.
+Projeto simplificado de transferências entre contas que utiliza o padrão Saga, sistema distribuido com comunicação assíncrona entre os sistemas fila (RabbitMQ).
 
 # Tecnologias utilizadas
 - PHP 8.2
@@ -43,6 +43,12 @@ docker-compose exec app_transaction php artisan rabbitmq:consumer
 docker-compose exec app_notification php artisan rabbitmq:consumer
 
 ```
+
+# Uso do sistema
+
+* Checar se os endpoins estão no ar
+
+* 
 # Autor
 
 Wanderson Alves Vieira
