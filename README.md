@@ -48,7 +48,10 @@ docker-compose exec app_notification php artisan rabbitmq:consumer
 
 * Checar se os endpoins estão no ar
 
-* 
+http://localhost:8081/health
+http://localhost:8082/health
+http://localhost:8083/health
+
 # Autor
 
 Wanderson Alves Vieira
