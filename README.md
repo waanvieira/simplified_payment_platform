@@ -1,44 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+# Sistema simplificado de transferências 
+<p>
+<a href="https://github.com/waanvieira/simplified_payment_platform/blob/main/LICENSE"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Sobre o projeto
+Projeto simplificado de transferências entre contas.
 
-## Como rodar o projeto
+# Tecnologias utilizadas
+- PHP 8.2
+- Laravel 11.7.0
+- MYSQL 8
+- RabbitMQ
 
-Copiar o arquivo .env-example a pasta raiz e renomea-lo para .env
+## Implantação em produção
+- Back end: Heroku
+- Front end web: Netlify
+- Banco de dados: Postgresql
 
-Criar uma rede docker 
+# Como executar o projeto
 
-docker network create simplified-payment-network
+## Pré-requisitos
+Docker
+https://www.docker.com/get-started/
 
-Depois da rede criada rodar o comando
+```bash
+# clonar repositório
+git clone https://github.com/waanvieira/simplified_payment_platform.git
 
+# entrar na pasta do projeto back end
+cd simplified_payment_platform
+
+# executar o projeto
 docker-compose up -d
 
-Acessar
+# Executar o consumer do ms_account
+docker-compose exec app_account php artisan rabbitmq:consumer
 
-http://localhost:9003/
+# Executar o consumer do ms_transaction
+docker-compose exec app_transaction php artisan rabbitmq:consumer
 
-Usuário admin padrão
+# Executar o consumer do ms_notification
+docker-compose exec app_notification php artisan rabbitmq:consumer
 
-email: useradmin@dev.com
+```
+# Autor
 
-Rodar teste do PHPUNIT
+Wanderson Alves Vieira
 
-docker-compose exec app php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-clover='reports/coverage/coverage.xml' --coverage-html='reports/coverage'
-
-Rodar teste do Laravel
-
-php artisan test
-
-## Libs usadas
-
-Lib RabbitMQ
-
-https://github.com/php-amqplib/php-amqplib
-
+https://www.linkedin.com/in/wanderson-alves-vieira-59b832148
