@@ -51,10 +51,21 @@ docker-compose exec app_notification php artisan rabbitmq:consumer
 # Uso do sistema
 
 * Checar se os endpoins estão no ar
+  http://localhost:8081/health <br>
+  http://localhost:8082/health <br>
+  http://localhost:8083/health <br>
 
-http://localhost:8081/health <br>
-http://localhost:8082/health <br>
-http://localhost:8083/health <br>
+* Realizar transferência
+
+Para reallizar transferências é obrigatório que tenha criado contas válidas e com saldo positivo para realizar a transferência
+
+curl  -X POST 'http://localhost:8001/api/transfer' \
+  --header 'Accept: application/json' \
+  {
+    "payer_id": "7e0b17a3-2f57-4273-a48a-9f81ed2958eb",
+    "payee_id": "8afd4fc5-5989-4b69-a799-1a0e2866235d",
+    "value": 10
+  }
 
 # Autor
 
