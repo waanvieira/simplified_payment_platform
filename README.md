@@ -55,6 +55,16 @@ docker-compose exec app_notification php artisan rabbitmq:consumer
   http://localhost:8082/health <br>
   http://localhost:8083/health <br>
 
+* Criar conta
+curl  -X POST 'http://localhost:8001/api/accounts' \
+  --header 'Accept: application/json' \
+  {
+    "name": "user test",
+    "cpf_cnpj": "153.267.740-54",
+    "email": "email@dev.teste",
+    "password": "123456"
+  }
+
 * Realizar transferência
 
 Para reallizar transferências é obrigatório que tenha criado contas válidas e com saldo positivo para realizar a transferência
