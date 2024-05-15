@@ -50,7 +50,7 @@ docker-compose exec app_notification php artisan rabbitmq:consumer
 
 # Uso do sistema
 
-* Checar se os endpoins estão no ar
+* Checar se os endpoins estão no ar <br>
   http://localhost:8081/health <br>
   http://localhost:8082/health <br>
   http://localhost:8083/health <br>
