@@ -4,6 +4,8 @@ RUN apk add --no-cache openssl bash mysql-client nodejs npm alpine-sdk autoconf 
 RUN mkdir -p /run/nginx && \
     echo "pid /run/nginx.pid;" >> /etc/nginx/nginx.conf
 
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/main mpdecimal-dev
+
 RUN docker-php-ext-install pdo pdo_mysql bcmath
 RUN pecl install rdkafka
 
@@ -14,6 +16,21 @@ RUN ln -s /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
 RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS
 RUN apk add --update linux-headers
 RUN pecl install xdebug
+
+ARG MPDECIMAL_VERSION=2.5.1
+
+RUN set -eux; \
+	cd /tmp/; \
+		curl -sSL -O https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-${MPDECIMAL_VERSION}.tar.gz; \
+		tar -xzf mpdecimal-${MPDECIMAL_VERSION}.tar.gz; \
+			cd mpdecimal-${MPDECIMAL_VERSION}; \
+			./configure; \
+			make; \
+			make install
+
+RUN pecl install decimal
+RUN echo "extension=decimal" >> /usr/local/etc/php/php.ini
+
 RUN docker-php-ext-enable xdebug
 RUN apk del -f .build-deps
 RUN docker-php-ext-install sockets
