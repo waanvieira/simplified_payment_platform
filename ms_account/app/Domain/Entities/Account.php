@@ -11,7 +11,7 @@ use App\Domain\ValueObjects\Uuid;
 use App\Exceptions\EntityValidationException;
 use DateTime;
 use Ramsey\Uuid\Uuid as RamseyUuid;
-
+use Decimal\Decimal;
 class Account extends Entity
 {
     public function __construct(
@@ -98,17 +98,27 @@ class Account extends Entity
             throw new EntityValidationException('balance unavailable to carry out transaction');
         }
 
-        $this->balance -= $value;
+        $balance = new Decimal((string)$this->balance);
+        $value = new Decimal((string)$value);
+        $result = $balance - $value;
+        $this->balance = $result->toFloat();
+
     }
 
     public function receiveTransfer(float $value)
     {
-        $this->balance += $value;
+        $balance = new Decimal((string)$this->balance);
+        $value = new Decimal((string)$value);
+        $result = $balance += $value;
+        $this->balance = $result->toFloat();
     }
 
     public function transferReprovedEstimateValue(float $value)
     {
-        $this->balance += $value;
+        $balance = new Decimal((string)$this->balance);
+        $value = new Decimal((string)$value);
+        $result = $balance += $value;
+        $this->balance = $result->toFloat();
     }
 
     public function addTransaction(string $transactionId)
