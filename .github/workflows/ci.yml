@@ -11,24 +11,29 @@ jobs:
     defaults:
       run:
         working-directory: ./ms_account
-    services:
-      mysql:
-        image: mysql:8.0.30
-        env:
-          MYSQL_DATABASE: account_db
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
+    # services:
+    #   mysql:
+    #     image: mysql:8.0.30
+    #     env:
+    #       MYSQL_DATABASE: account_db
+    #       MYSQL_ROOT_PASSWORD: root
+    #     ports:
+    #       - 3306:3306
+    #     options: >-
+    #       --health-cmd="mysqladmin ping"
+    #       --health-interval=10s
+    #       --health-timeout=5s
+    #       --health-retries=3
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
         php-version: '8.2'
     - uses: actions/checkout@v3
+    - name: Install lib Decimal PHP
+      run: |
+         pecl install decimal
+         extension=decimal
+         apt-get install libmpdec-dev
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
