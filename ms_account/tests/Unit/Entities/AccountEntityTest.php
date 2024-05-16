@@ -212,5 +212,15 @@ class AccountEntityTest extends TestCase
         $account->makeTransfer(1.24578978979);
         $this->assertEquals(0.08, $account->balance);
 
+        $account = Account::create(
+            name: 'name',
+            email: 'email@dev.com',
+            cpfCnpj: '616.177.000-88',
+            password: '1234',
+            balance: 92.001
+        );
+
+        $account->makeTransfer(91.199);
+        $this->assertEquals(0.802, $account->balance);
     }
 }

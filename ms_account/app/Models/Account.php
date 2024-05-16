@@ -9,6 +9,8 @@ class Account extends Model
 {
     use HasFactory;
 
+    protected $table = 'accounts';
+
     public $incrementing = false;
 
     protected $fillable = [
