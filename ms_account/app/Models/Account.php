@@ -39,6 +39,6 @@ class Account extends Model
     protected $casts = [
         'id' => 'string',
         'password' => 'hashed',
-        'shopkeeper' => 'boolean'
+        'shopkeeper' => 'boolean',
     ];
 }

@@ -30,6 +30,7 @@ class Transaction extends Entity
     public static function create(TransactionType $transactionType, Uuid $payerId, Uuid $payeeId, float $value): self
     {
         $id = RamseyUuid::uuid4()->toString();
+
         return new self(
             id: new Uuid($id),
             transactionType: $transactionType,
@@ -56,13 +57,13 @@ class Transaction extends Entity
     public function toArray(): array
     {
         return [
-            "id" => $this->id(),
-            "transactionType" => $this->transactionType(),
-            "payerId" => $this->payerId(),
-            "payeeId" => $this->payeeId(),
-            "value" => $this->value,
-            "transactionStatus" => $this->transactionStatus(),
-            "createdAt" => $this->createdAt()
+            'id' => $this->id(),
+            'transactionType' => $this->transactionType(),
+            'payerId' => $this->payerId(),
+            'payeeId' => $this->payeeId(),
+            'value' => $this->value,
+            'transactionStatus' => $this->transactionStatus(),
+            'createdAt' => $this->createdAt(),
         ];
     }
 
@@ -96,18 +97,18 @@ class Transaction extends Entity
         return (string) $this->payeeId;
     }
 
-    public function transactionType() : string
+    public function transactionType(): string
     {
-        return (string)$this->transactionType->value;
+        return (string) $this->transactionType->value;
     }
 
-    public function transactionStatus() : string
+    public function transactionStatus(): string
     {
-        return (string)$this->transactionStatus->value;
+        return (string) $this->transactionStatus->value;
     }
 
     public function confirmationAt(): string
     {
-        return (string)$this->confirmationAt->format('Y-m-d H:i:s');
+        return (string) $this->confirmationAt->format('Y-m-d H:i:s');
     }
 }

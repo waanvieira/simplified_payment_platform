@@ -15,7 +15,7 @@ class AccountDeleteUseCase
         $this->repository = $repository;
     }
 
-    public function execute($id) : bool
+    public function execute($id): bool
     {
         return $this->repository->delete($id);
     }

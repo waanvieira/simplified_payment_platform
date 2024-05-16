@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\UseCases\Account;
 
 use App\Domain\Entities\Account;
-use App\Domain\Entities\AccountEntity;
 use App\Domain\Repositories\AccountEntityRepositoryInterface;
 use App\Domain\ValueObjects\CpfCnpj;
 use App\Domain\ValueObjects\Email;
@@ -22,7 +21,7 @@ class AccountUpdateUseCase
         $this->repository = $repository;
     }
 
-    public function execute(AccountUpdateInputDto $input) : AccountUpdateOutputDto
+    public function execute(AccountUpdateInputDto $input): AccountUpdateOutputDto
     {
         $AccountEntity = Account::restore(
             id: new Uuid($input->id),
@@ -44,5 +43,4 @@ class AccountUpdateUseCase
             created_at: $account->createdAt()
         );
     }
-
 }

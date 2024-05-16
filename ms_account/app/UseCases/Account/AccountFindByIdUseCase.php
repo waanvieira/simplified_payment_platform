@@ -19,6 +19,7 @@ class AccountFindByIdUseCase
     public function execute(string $id): AccountCreateOutputDto
     {
         $account = $this->repository->findById($id);
+
         return new AccountCreateOutputDto(
             id: $account->id(),
             name: $account->name,

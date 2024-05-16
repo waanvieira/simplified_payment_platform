@@ -2,12 +2,8 @@
 
 namespace Tests\Unit\UseCase\Transaction;
 
-use App\Domain\Entities\Account;
-use App\Domain\Entities\Transaction;
 use App\Domain\Enum\TransactionStatus;
 use App\Domain\Enum\TransactionType;
-use App\Domain\Repositories\AccountEntityRepositoryInterface;
-use App\Domain\Repositories\TransactionEntityRepositoryInterface;
 use App\Domain\ValueObjects\Uuid;
 use App\Exceptions\NotFoundException;
 use App\Models\Account as ModelsAccount;
@@ -33,8 +29,8 @@ class TransferCreateUseCaseTest extends TestCase
 
     public function testCreateNewTransfer()
     {
-        $payer = ModelsAccount::factory()->create(["id" => Uuid::random(), "name" => fake()->name(), "cpf_cnpj"=> '352.318.010-46', "email" => fake()->email(), "balance" => 68]);
-        $payee = ModelsAccount::factory()->create(["id" => Uuid::random(), "name" => fake()->name(), "cpf_cnpj"=> '368.708.660-74', "email" => fake()->email(), "balance" => 20]);
+        $payer = ModelsAccount::factory()->create(['id' => Uuid::random(), 'name' => fake()->name(), 'cpf_cnpj' => '352.318.010-46', 'email' => fake()->email(), 'balance' => 68]);
+        $payee = ModelsAccount::factory()->create(['id' => Uuid::random(), 'name' => fake()->name(), 'cpf_cnpj' => '368.708.660-74', 'email' => fake()->email(), 'balance' => 20]);
         $model = new ModelsTransaction();
         $repositoyMock = new TransactionEloquentRepository($model);
         // $rabbitInterface = Mockery::mock(stdClass::class, RabbitInterface::class);
@@ -80,7 +76,7 @@ class TransferCreateUseCaseTest extends TestCase
         $rabbitInterface->shouldReceive('producer')->andReturn(true);
         $modelAccount = new ModelsAccount();
         $repositoyMockAccount = new AccountEloquentRepository($modelAccount);
+
         return new TransferCreateUseCase($repositoyMock, $repositoyMockAccount, $rabbitInterface);
     }
-
 }

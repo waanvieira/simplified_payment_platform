@@ -3,11 +3,11 @@
 namespace Tests\Unit\Models;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Tests\TestCase;
 use Tests\Traits\TestModels;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
 
 class UserTest extends TestCase
 {
@@ -46,7 +46,7 @@ class UserTest extends TestCase
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'shopkeeper' => 'boolean',
-            'deleted_at' => 'datetime'
+            'deleted_at' => 'datetime',
         ];
     }
 
@@ -64,6 +64,7 @@ class UserTest extends TestCase
     public function relations(): array
     {
         $this->assertTrue(true);
+
         return [];
     }
 
@@ -73,7 +74,7 @@ class UserTest extends TestCase
             // HasApiTokens::class,
             HasFactory::class,
             Notifiable::class,
-            \Illuminate\Database\Eloquent\SoftDeletes::class
+            \Illuminate\Database\Eloquent\SoftDeletes::class,
         ];
     }
 }

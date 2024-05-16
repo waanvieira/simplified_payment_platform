@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Domain\Entities;
 
-use Core\Domain\Notification\Notification;
 use Exception;
 
 abstract class Entity
 {
-    abstract function toArray();
+    abstract public function toArray();
 
     public function __get($property)
     {
@@ -28,6 +27,6 @@ abstract class Entity
 
     public function createdAt(): string
     {
-        return (string)$this->createdAt->format('Y-m-d H:i:s');
+        return (string) $this->createdAt->format('Y-m-d H:i:s');
     }
 }

@@ -39,7 +39,7 @@ class Transaction extends Model
     protected $casts = [
         'id' => 'string',
         'password' => 'hashed',
-        'shopkeeper' => 'boolean'
+        'shopkeeper' => 'boolean',
     ];
 
     public function payer()
@@ -52,11 +52,3 @@ class Transaction extends Model
         return $this->hasOne(Account::class, 'id', 'payee_id');
     }
 }
-
-
-
-
-
-
-
-

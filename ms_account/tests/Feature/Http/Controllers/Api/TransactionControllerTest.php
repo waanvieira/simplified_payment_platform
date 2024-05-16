@@ -7,7 +7,6 @@ use App\Domain\Enum\TransactionType;
 use App\Http\Controllers\Api\TransactionController;
 use App\Models\Account;
 use App\Models\Transaction;
-use Exception;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\Response;
 use Ramsey\Uuid\Uuid;
@@ -19,11 +18,12 @@ use Tests\Traits\TestValidations;
 class TransactionControllerTest extends TestCase
 {
     use DatabaseTransactions;
-    use TestValidations;
-    use TestSaves;
     use TestResources;
+    use TestSaves;
+    use TestValidations;
 
     private $transaction;
+
     private $controller;
 
     protected function setUp(): void
@@ -34,13 +34,13 @@ class TransactionControllerTest extends TestCase
     }
 
     private $serializedFields = [
-        "id",
-        "transaction_type",
-        "payer_id",
-        "payee_id",
-        "value",
-        "transaction_status",
-        "created_at",
+        'id',
+        'transaction_type',
+        'payer_id',
+        'payee_id',
+        'value',
+        'transaction_status',
+        'created_at',
     ];
 
     // public function testGetAll()
@@ -73,7 +73,7 @@ class TransactionControllerTest extends TestCase
         $data = [
             'payer_id' => null,
             'payee_id' => null,
-            'value' => null
+            'value' => null,
         ];
 
         $this->assertInvalidationInStoreAction($data, 'required', [], route('transfer'));
@@ -91,21 +91,21 @@ class TransactionControllerTest extends TestCase
         ]);
         $payer = Account::factory()->create([
             'id' => Uuid::uuid4()->toString(),
-            'cpf_cnpj' =>  "668.733.240-60",
-            "balance" => 10.12
+            'cpf_cnpj' => '668.733.240-60',
+            'balance' => 10.12,
         ]);
 
         $data = [
-            "payer_id" => $payer->id,
-            "payee_id" => $payee->id,
-            "value" => 1.05
+            'payer_id' => $payer->id,
+            'payee_id' => $payee->id,
+            'value' => 1.05,
         ];
 
         $response = $this->assertStore($data, $data, [], route('transfer'));
         $response
             ->assertStatus(Response::HTTP_CREATED)
             ->assertJsonStructure([
-                'data' => $this->serializedFields
+                'data' => $this->serializedFields,
             ]);
 
         $return = $response->json()['data'];
@@ -119,8 +119,8 @@ class TransactionControllerTest extends TestCase
     {
         $payer = Account::factory()->create([
             'id' => Uuid::uuid4()->toString(),
-            'cpf_cnpj' => "668.733.240-60",
-            'balance' => 0
+            'cpf_cnpj' => '668.733.240-60',
+            'balance' => 0,
         ]);
 
         $payee = Account::factory()->create([
@@ -128,16 +128,16 @@ class TransactionControllerTest extends TestCase
         ]);
 
         $data = [
-            "payer_id" => $payer->id,
-            "payee_id" => $payee->id,
-            "value" => rand(1, 100)
+            'payer_id' => $payer->id,
+            'payee_id' => $payee->id,
+            'value' => rand(1, 100),
         ];
 
         $response = $this->post(route('transfer'), $data);
         $response->assertStatus(Response::HTTP_BAD_REQUEST);
         $return = $response->json();
         $expectedReturn = [
-            "message" => "balance unavailable to carry out transaction"
+            'message' => 'balance unavailable to carry out transaction',
         ];
         $this->assertEquals($expectedReturn, $return);
     }
@@ -146,8 +146,8 @@ class TransactionControllerTest extends TestCase
     {
         $payer = Account::factory()->create([
             'id' => Uuid::uuid4()->toString(),
-            'cpf_cnpj' => "668.733.240-60",
-            'balance' => 5
+            'cpf_cnpj' => '668.733.240-60',
+            'balance' => 5,
         ]);
 
         $payee = Account::factory()->create([
@@ -155,16 +155,16 @@ class TransactionControllerTest extends TestCase
         ]);
 
         $data = [
-            "payer_id" => $payer->id,
-            "payee_id" => $payee->id,
-            "value" => 10
+            'payer_id' => $payer->id,
+            'payee_id' => $payee->id,
+            'value' => 10,
         ];
 
         $response = $this->post(route('transfer'), $data);
         $response->assertStatus(Response::HTTP_BAD_REQUEST);
         $return = $response->json();
         $expectedReturn = [
-            "message" => "balance unavailable to carry out transaction"
+            'message' => 'balance unavailable to carry out transaction',
         ];
         $this->assertEquals($expectedReturn, $return);
     }
@@ -177,16 +177,16 @@ class TransactionControllerTest extends TestCase
 
         $idNotFound = Uuid::uuid4()->toString();
         $data = [
-            "payer_id" => $payer->id,
-            "payee_id" => $idNotFound,
-            "value" => rand(1, 100)
+            'payer_id' => $payer->id,
+            'payee_id' => $idNotFound,
+            'value' => rand(1, 100),
         ];
 
         $response = $this->post(route('transfer'), $data);
         $response->assertStatus(Response::HTTP_NOT_FOUND);
         $return = $response->json();
         $expectedReturn = [
-            "message" => "Register {$idNotFound} Not Found"
+            'message' => "Register {$idNotFound} Not Found",
         ];
         $this->assertEquals($expectedReturn, $return);
     }
@@ -198,18 +198,17 @@ class TransactionControllerTest extends TestCase
             'id' => Uuid::uuid4()->toString(),
         ]);
 
-
         $data = [
-            "payer_id" => $idNotFound,
-            "payee_id" => $payee->id,
-            "value" => rand(1, 100)
+            'payer_id' => $idNotFound,
+            'payee_id' => $payee->id,
+            'value' => rand(1, 100),
         ];
 
         $response = $this->post(route('transfer'), $data);
         $response->assertStatus(Response::HTTP_NOT_FOUND);
         $return = $response->json();
         $expectedReturn = [
-            "message" => "Register {$idNotFound} Not Found"
+            'message' => "Register {$idNotFound} Not Found",
         ];
         $this->assertEquals($expectedReturn, $return);
     }

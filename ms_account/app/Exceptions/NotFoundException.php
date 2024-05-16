@@ -13,6 +13,7 @@ class NotFoundException extends Exception
     {
         $this->message = $message;
     }
+
     /**
      * Report the exception.
      *
@@ -31,6 +32,6 @@ class NotFoundException extends Exception
      */
     public function render($request)
     {
-        return response()->json(['message' => $this->message ?? "Register not found"], Response::HTTP_NOT_FOUND);
+        return response()->json(['message' => $this->message ?? 'Register not found'], Response::HTTP_NOT_FOUND);
     }
 }

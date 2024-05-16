@@ -6,15 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 trait TestModels
 {
-    protected abstract function model() : Model;
-    protected abstract function filleableAtributes() : array;
-    protected abstract function casts() : array;
+    abstract protected function model(): Model;
+
+    abstract protected function filleableAtributes(): array;
+
+    abstract protected function casts(): array;
+
     // protected abstract function datesAttributes() : array;
     // protected abstract function tableName() : string;
     // protected abstract function primaryKeyName() : string;
-    protected abstract function constantes() : array;
-    protected abstract function relations() : array;
-    protected abstract function traitsNeed() : array;
+    abstract protected function constantes(): array;
+
+    abstract protected function relations(): array;
+
+    abstract protected function traitsNeed(): array;
 
     public function testsFillableAttributes()
     {
@@ -44,7 +49,7 @@ trait TestModels
     public function testConstantes()
     {
         if (empty($this->constantes())) {
-            $this->markTestSkipped(__METHOD__ . 'valores não informados para teste.');
+            $this->markTestSkipped(__METHOD__.'valores não informados para teste.');
         }
 
         $constantes = $this->constantes();
@@ -66,7 +71,7 @@ trait TestModels
     public function testRelations()
     {
         if (empty($this->relations())) {
-            $this->markTestSkipped(__METHOD__ . 'valores não informados para teste.');
+            $this->markTestSkipped(__METHOD__.'valores não informados para teste.');
         }
 
         $relations = $this->relations();
@@ -80,7 +85,7 @@ trait TestModels
     {
         $this->traitsNeed();
         $traitsUsed = array_keys(class_uses($this->model()));
-        $this->assertEquals(count($traitsUsed),count($this->traitsNeed()));
+        $this->assertEquals(count($traitsUsed), count($this->traitsNeed()));
         $this->assertEmpty(array_diff($this->traitsNeed(), $traitsUsed));
     }
 }

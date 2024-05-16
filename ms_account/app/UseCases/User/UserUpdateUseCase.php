@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace App\UseCases\User;
 
 use App\Domain\Entities\User;
-use App\Domain\Entities\UserEntity;
 use App\Domain\Repositories\UserEntityRepositoryInterface;
-use App\Domain\ValueObjects\CpfCnpj;
 use App\UseCases\DTO\User\UserUpdateInputDto;
 use App\UseCases\DTO\User\UserUpdateOutputDto;
 
@@ -20,7 +18,7 @@ class UserUpdateUseCase
         $this->repository = $repository;
     }
 
-    public function execute(UserUpdateInputDto $input) : UserUpdateOutputDto
+    public function execute(UserUpdateInputDto $input): UserUpdateOutputDto
     {
         $userEntity = User::restore(
             id: $input->id,
@@ -41,5 +39,4 @@ class UserUpdateUseCase
             created_at: $userDb->createdAt
         );
     }
-
 }

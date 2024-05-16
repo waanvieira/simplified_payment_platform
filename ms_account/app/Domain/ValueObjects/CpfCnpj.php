@@ -51,7 +51,7 @@ class CpfCnpj
     private function validCnpj(string $cnpj)
     {
         if (strlen($cnpj) != 14 || preg_match('/(\d)\1{13}/', $cnpj)) {
-            throw new InvalidArgumentException("Invalid CNPJ");
+            throw new InvalidArgumentException('Invalid CNPJ');
         }
 
         for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++) {
@@ -62,7 +62,7 @@ class CpfCnpj
         $resto = $soma % 11;
 
         if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto)) {
-            throw new InvalidArgumentException("Invalid CNPJ");
+            throw new InvalidArgumentException('Invalid CNPJ');
         }
 
         for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++) {

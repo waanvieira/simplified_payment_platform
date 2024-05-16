@@ -32,12 +32,14 @@ class MessageEloquentRepository extends AbstractDtoModelRepository implements Me
     public function delete(string $id): bool
     {
         $messageDb = $this->model->findOrFail($id);
+
         return $messageDb->delete();
     }
 
     public function findById(string $id): Message
     {
         $dataDb = $this->model->findOrFail($id);
+
         return $this->convertToEntity($dataDb);
     }
 
@@ -50,6 +52,7 @@ class MessageEloquentRepository extends AbstractDtoModelRepository implements Me
             'newsLetterId' => $message->newsLetterId,
         ]);
         $messageDb->refresh();
+
         return $this->convertToEntity($messageDb);
     }
 

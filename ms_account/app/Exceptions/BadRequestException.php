@@ -13,6 +13,7 @@ class BadRequestException extends Exception
     {
         $this->message = $message;
     }
+
     /**
      * Report the exception.
      *

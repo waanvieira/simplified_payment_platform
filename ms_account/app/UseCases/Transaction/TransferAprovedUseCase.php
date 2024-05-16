@@ -23,25 +23,25 @@ class TransferAprovedUseCase
     ) {
     }
 
-    public function execute(TransferAprovedInputDto $input) : void
+    public function execute(TransferAprovedInputDto $input): void
     {
         $transactionEntity = Transaction::restore(
             id: new Uuid($input->transactionId),
             transactionType: TransactionType::TRANSFER,
             payerId: new Uuid($input->payerId),
             payeeId: new Uuid($input->payeeId),
-            value: (float)$input->value,
+            value: (float) $input->value,
             transactionStatus: TransactionStatus::APROVED
         );
         $this->repository->findById($transactionEntity->id());
         $self = $this;
         $payee = $this->accountEntityRepositoryInterface->findById($transactionEntity->payeeId());
-        DB::transaction(function () use($self, $payee, $transactionEntity) {
+        DB::transaction(function () use ($self, $payee, $transactionEntity) {
             $transactionEntity->paymentAproved();
             $self->repository->update($transactionEntity);
             $payee->receiveTransfer($transactionEntity->value);
             $self->accountEntityRepositoryInterface->update($payee);
-            $self->rabbitMqService->producer("notifyTransaction", $transactionEntity->toArray());
+            $self->rabbitMqService->producer('notifyTransaction', $transactionEntity->toArray());
         });
     }
 }

@@ -16,6 +16,7 @@ trait CreateTransactionByTest
     {
         $payer = Account::create(fake()->name(), '563.657.910-11', fake()->email(), 30);
         $payee = Account::create(fake()->name(), '424.559.250-80', fake()->email(), 20);
+
         return Transaction::create(
             transactionType: TransactionType::TRANSFER,
             payerId: $payer->id,
@@ -28,7 +29,8 @@ trait CreateTransactionByTest
     {
         $payer = Account::create(fake()->name(), '563.657.910-11', fake()->email(), 30);
         $payee = Account::create(fake()->name(), '424.559.250-80', fake()->email(), 20);
-        return  $this->createStub(Transaction::class);
+
+        return $this->createStub(Transaction::class);
         // Configure the stub.
         // $stub->method('doSomething')
         //      ->willReturn('foo');
@@ -45,15 +47,16 @@ trait CreateTransactionByTest
 
     public function createTransactionDb($transactionType = TransactionType::TRANSFER->value, $value = 10, $transactionStatus = TransactionStatus::PROCESSING->value)
     {
-        $payer = ModelsAccount::factory()->create(["id" => Uuid::random(), "name" => fake()->name(), "cpf_cnpj" => '352.318.010-46', "email" => fake()->email(), "balance" => 68]);
-        $payee = ModelsAccount::factory()->create(["id" => Uuid::random(), "name" => fake()->name(), "cpf_cnpj" => '368.708.660-74', "email" => fake()->email(), "balance" => 20]);
+        $payer = ModelsAccount::factory()->create(['id' => Uuid::random(), 'name' => fake()->name(), 'cpf_cnpj' => '352.318.010-46', 'email' => fake()->email(), 'balance' => 68]);
+        $payee = ModelsAccount::factory()->create(['id' => Uuid::random(), 'name' => fake()->name(), 'cpf_cnpj' => '368.708.660-74', 'email' => fake()->email(), 'balance' => 20]);
+
         return ModelsTransaction::factory()->create([
-            "id" => Uuid::random(),
-            "transaction_type" => $transactionType,
-            "payer_id" => $payer->id,
-            "payee_id" => $payee->id,
-            "value" => $value,
-            "transaction_status" => $transactionStatus
+            'id' => Uuid::random(),
+            'transaction_type' => $transactionType,
+            'payer_id' => $payer->id,
+            'payee_id' => $payee->id,
+            'value' => $value,
+            'transaction_status' => $transactionStatus,
         ]);
     }
 }

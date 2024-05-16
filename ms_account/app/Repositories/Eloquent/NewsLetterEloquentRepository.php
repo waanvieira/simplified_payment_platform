@@ -36,7 +36,8 @@ class NewsLetterEloquentRepository implements NewsletterEntityRepositoryInterfac
 
     public function findById(string $NewsLetterId): NewsLetter
     {
-        $dataDb =  $this->model()->findOrFail($NewsLetterId);
+        $dataDb = $this->model()->findOrFail($NewsLetterId);
+
         return $this->convertToEntity($dataDb);
     }
 
@@ -48,6 +49,7 @@ class NewsLetterEloquentRepository implements NewsletterEntityRepositoryInterfac
         }
         $query = $query->orderBy('name', $order);
         $dataDb = $query->paginate($totalPage);
+
         return $dataDb;
     }
 
@@ -58,6 +60,7 @@ class NewsLetterEloquentRepository implements NewsletterEntityRepositoryInterfac
             $query = $query->where('name', 'LIKE', "%{$filter}%");
         }
         $query = $query->orderBy('name', $order);
+
         return $query->all()->toArray();
     }
 
@@ -69,20 +72,22 @@ class NewsLetterEloquentRepository implements NewsletterEntityRepositoryInterfac
             'description' => $newsLetterDb->description,
         ]);
         $newsLetterDb->refresh();
+
         return $this->convertToEntity($newsLetterDb);
     }
 
     public function delete(string $NewsLetterId): bool
     {
         $newsLetterDb = $this->model->findOrFail($NewsLetterId);
+
         return $newsLetterDb->delete();
     }
 
-    public function registerUserOnList(string $newsLetterId, string $idUser) : void
+    public function registerUserOnList(string $newsLetterId, string $idUser): void
     {
         $newsletter = $this->model->find($newsLetterId);
 
-        if (!$newsletter->users->where('id', $idUser)->first()) {
+        if (! $newsletter->users->where('id', $idUser)->first()) {
             $newsletter->users()->attach($idUser);
         }
     }

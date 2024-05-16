@@ -11,7 +11,9 @@ use PhpAmqpLib\Message\AMQPMessage;
 class AMQPService implements RabbitInterface
 {
     protected $connection = null;
+
     protected $arrayDataConnection;
+
     protected $channel = null;
 
     public function __construct()
@@ -26,7 +28,7 @@ class AMQPService implements RabbitInterface
     public function producer(string $queue, array $payload, string $exchange = ''): void
     {
         $this->connect();
-        (bool)$durable = true;
+        (bool) $durable = true;
         $this->channel->queue_declare($queue, false, $durable, false, false);
         $this->channel->exchange_declare($queue, AMQPExchangeType::DIRECT, false, true, false);
         // $this->channel->queue_bind($queue, $exchange);
@@ -44,7 +46,7 @@ class AMQPService implements RabbitInterface
     public function producerInLote(string $queue, array $payload, int $registerNumber, int $currentRegisterNumber): void
     {
         $this->connect();
-        (bool)$durable = true;
+        (bool) $durable = true;
         $this->channel->queue_declare($queue, false, $durable, false, false);
         $this->channel->exchange_declare($queue, AMQPExchangeType::DIRECT, false, true, false);
 
@@ -113,7 +115,7 @@ class AMQPService implements RabbitInterface
             return;
         }
 
-        if (env('RABBITMQ_SCHEME') === "amqps") {
+        if (env('RABBITMQ_SCHEME') === 'amqps') {
             $this->sslConnection();
         } else {
             $this->streamConnection();
@@ -134,25 +136,25 @@ class AMQPService implements RabbitInterface
 
     private function sslConnection()
     {
-        if (!defined('CERTS_PATH')) {
-            define('CERTS_PATH', realpath(__DIR__ . "/../../../cert-ssl/"));
+        if (! defined('CERTS_PATH')) {
+            define('CERTS_PATH', realpath(__DIR__.'/../../../cert-ssl/'));
         }
 
-        $ssl_opts = array(
-            'ssl_version' => CERTS_PATH . 'tlsv1.2',
+        $ssl_opts = [
+            'ssl_version' => CERTS_PATH.'tlsv1.2',
             'capath' => CERTS_PATH,
             'cafile' => getenv('RABBITMQ_SSL_CA_CERTIFICATE'),
             'verify_peer' => false,
             'verify_peer_name' => false,
-        );
+        ];
 
-        $options = array(
+        $options = [
             'login_method' => env('RABBITMQ_LM', 'PLAIN'),
             'insist' => env('RABBITMQ_INSIST', false),
             'connection_timeout' => env('RABBITMQ_CT', '6000.0'),
             'read_write_timeout' => env('RABBITMQ_RWT', '6000.0'),
             'heartbeat' => env('RABBITMQ_HEARTBEAT', '15'),
-        );
+        ];
 
         $this->connection = new AMQPSSLConnection(
             $this->arrayDataConnection['host'],

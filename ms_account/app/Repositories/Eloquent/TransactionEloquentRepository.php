@@ -23,13 +23,13 @@ class TransactionEloquentRepository implements TransactionEntityRepositoryInterf
     public function insert(Entity $entity): Entity
     {
         $dataDb = $this->model->create([
-            "id" => $entity->id(),
-            "transaction_type" => $entity->transactionType(),
-            "payer_id" => $entity->payerId(),
-            "payee_id" => $entity->payeeId(),
-            "value" => $entity->value,
-            "transaction_status" => $entity->transactionStatus(),
-            "created_at" => $entity->createdAt()
+            'id' => $entity->id(),
+            'transaction_type' => $entity->transactionType(),
+            'payer_id' => $entity->payerId(),
+            'payee_id' => $entity->payeeId(),
+            'value' => $entity->value,
+            'transaction_status' => $entity->transactionStatus(),
+            'created_at' => $entity->createdAt(),
         ]);
 
         return $this->convertObjectToEntity($dataDb);
@@ -38,7 +38,7 @@ class TransactionEloquentRepository implements TransactionEntityRepositoryInterf
     public function findById(string $id): Entity
     {
         $dataDb = $this->model->find($id);
-        if (!$dataDb) {
+        if (! $dataDb) {
             throw new NotFoundException("Register {$id} Not Found");
         }
 
@@ -97,39 +97,41 @@ class TransactionEloquentRepository implements TransactionEntityRepositoryInterf
     {
         $dataDb = $this->findByIdEloquent($entity->id());
         $dataDb->update([
-            "id" => $entity->id(),
-            "transaction_type" => $entity->transactionType(),
-            "payer_id" => $entity->payerId(),
-            "payee_id" => $entity->payeeId(),
-            "value" => $entity->value,
-            "transaction_status" => $entity->transactionStatus(),
-            "confirmation_at" => $entity->confirmationAt()
+            'id' => $entity->id(),
+            'transaction_type' => $entity->transactionType(),
+            'payer_id' => $entity->payerId(),
+            'payee_id' => $entity->payeeId(),
+            'value' => $entity->value,
+            'transaction_status' => $entity->transactionStatus(),
+            'confirmation_at' => $entity->confirmationAt(),
         ]);
 
         $dataDb->refresh();
+
         return $this->convertObjectToEntity($dataDb);
     }
 
     public function delete(string $entityId): bool
     {
         $dataDb = $this->findByIdEloquent($entityId);
+
         return $dataDb->delete();
     }
 
     private function findByIdEloquent(string $id)
     {
         $transaction = $this->model->find($id);
-        if (!$transaction) {
+        if (! $transaction) {
             throw new NotFoundException("Transaction {$id} not found!");
         }
 
         return $transaction;
     }
 
-
     public function updateBalance(Entity $entity): bool
     {
         $dataDb = $this->findByIdEloquent($entity->id);
+
         return $dataDb->update([
             'balance' => $entity->balance,
         ]);

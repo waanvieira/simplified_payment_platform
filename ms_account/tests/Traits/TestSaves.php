@@ -6,11 +6,13 @@ use Illuminate\Testing\TestResponse;
 
 trait TestSaves
 {
-    protected abstract function model();
-    protected abstract function routeStore();
-    protected abstract function routeUpdate();
+    abstract protected function model();
 
-    protected function assertStore(array $sendData, array $testDataBase, array $testJsonData = null, $route = null): TestResponse
+    abstract protected function routeStore();
+
+    abstract protected function routeUpdate();
+
+    protected function assertStore(array $sendData, array $testDataBase, ?array $testJsonData = null, $route = null): TestResponse
     {
         /** @var TestResponse $response */
         $response = $this->json('POST', $route ?? $this->routeStore(), $sendData);
@@ -20,10 +22,11 @@ trait TestSaves
         }
         $this->assertInDataBase($response, $testDataBase);
         $this->assertJsonResponseContent($response, $testDataBase, $testJsonData);
+
         return $response;
     }
 
-    protected function assertUpdate(array $sendData, array $testDataBase, array $testJsonData = null, $route = null): TestResponse
+    protected function assertUpdate(array $sendData, array $testDataBase, ?array $testJsonData = null, $route = null): TestResponse
     {
         /** @var TestResponse $response */
         $response = $this->json('PUT', $route ?? $this->routeUpdate(), $sendData);
@@ -32,6 +35,7 @@ trait TestSaves
         }
         $this->assertInDataBase($response, $testDataBase);
         $this->assertJsonResponseContent($response, $testDataBase, $testJsonData);
+
         return $response;
     }
 
@@ -46,7 +50,7 @@ trait TestSaves
         // }
     }
 
-    private function assertJsonResponseContent(TestResponse $response, array $testJsonData, array $testDataBase = null)
+    private function assertJsonResponseContent(TestResponse $response, array $testJsonData, ?array $testDataBase = null)
     {
         $primaryKey = $this->getPrimaryKey();
         $testResponse = $testJsonData ?? $testDataBase;
@@ -65,6 +69,7 @@ trait TestSaves
     private function getPrimaryKey()
     {
         $model = $this->model();
-        return (string)(new $model)->getKeyName() ?? null;
+
+        return (string) (new $model)->getKeyName() ?? null;
     }
 }

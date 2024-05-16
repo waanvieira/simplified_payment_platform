@@ -20,6 +20,7 @@ class UserController extends Controller
     public function index(Request $request, UserGetAllUseCase $useCase)
     {
         $response = $useCase->execute($request->all());
+
         return response()->json($response, Response::HTTP_OK);
     }
 
@@ -35,6 +36,7 @@ class UserController extends Controller
         );
 
         $model = new User((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_CREATED);
     }
 
@@ -42,6 +44,7 @@ class UserController extends Controller
     {
         $response = $useCase->execute($id);
         $model = new User((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_OK);
     }
 
@@ -57,12 +60,14 @@ class UserController extends Controller
         );
 
         $model = new User((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_OK);
     }
 
     public function destroy($id, UserDeleteUseCase $useCase)
     {
         $useCase->execute($id);
+
         return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }

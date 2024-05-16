@@ -15,12 +15,13 @@ use Tests\Traits\TestValidations;
 class AccountControllerTest extends TestCase
 {
     use DatabaseTransactions;
-    use TestValidations;
-    use TestSaves;
     use TestResources;
+    use TestSaves;
+    use TestValidations;
     // use WithOutMiddleware;
 
     private $account;
+
     private $controller;
 
     protected function setUp(): void
@@ -44,7 +45,7 @@ class AccountControllerTest extends TestCase
         'cpf_cnpj',
         'email',
         'balance',
-        'created_at'
+        'created_at',
     ];
 
     public function testGetAll()
@@ -55,7 +56,7 @@ class AccountControllerTest extends TestCase
             ->assertJsonStructure(
                 [
                     'data' => [
-                        '*' => $this->serializedFields
+                        '*' => $this->serializedFields,
                     ],
                     'links' => [],
                 ]
@@ -68,16 +69,16 @@ class AccountControllerTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonStructure([
-                'data' => $this->serializedFields
+                'data' => $this->serializedFields,
             ]);
     }
 
     public function testAssertInvalidationStore()
     {
         $data = [
-            'name'     => null,
-            'cpf_cnpj'    => null,
-            'email'    => null,
+            'name' => null,
+            'cpf_cnpj' => null,
+            'email' => null,
             'password' => null,
         ];
 
@@ -87,9 +88,9 @@ class AccountControllerTest extends TestCase
     public function testAssertInvalidationUpdate()
     {
         $data = [
-            'name'     => null,
-            'cpf_cnpj'     => null,
-            'email'    => null,
+            'name' => null,
+            'cpf_cnpj' => null,
+            'email' => null,
         ];
 
         $this->assertInvalidationInUpdateAction($data, 'required', [], $this->routeUpdate());
@@ -113,7 +114,7 @@ class AccountControllerTest extends TestCase
         $response
             ->assertStatus(201)
             ->assertJsonStructure([
-                'data' => $this->serializedFields
+                'data' => $this->serializedFields,
             ]);
     }
 
@@ -132,7 +133,7 @@ class AccountControllerTest extends TestCase
         $response
             ->assertStatus(201)
             ->assertJsonStructure([
-                'data' => $this->serializedFields
+                'data' => $this->serializedFields,
             ]);
     }
 
@@ -141,12 +142,12 @@ class AccountControllerTest extends TestCase
         $data = [
             'name' => 'teste updated',
             'cpf_cnpj' => '589.944.690-01',
-            'email' => 'upddev@dev.com.br'
+            'email' => 'upddev@dev.com.br',
         ];
         $response = $this->assertUpdate($data, $data);
         $response->assertStatus(Response::HTTP_OK);
         $response->assertJsonStructure([
-            'data' => $this->serializedFields
+            'data' => $this->serializedFields,
         ]);
     }
 
@@ -165,7 +166,7 @@ class AccountControllerTest extends TestCase
         $data = [
             'name' => 'teste updated',
             'cpf_cnpj' => '37.578.189/0001-04',
-            'email' => 'upddev@dev.com.br'
+            'email' => 'upddev@dev.com.br',
         ];
 
         $response = $this->assertUpdate($data, $data);
@@ -181,7 +182,6 @@ class AccountControllerTest extends TestCase
         $accountExcluded = $this->model()::where('id', $this->account->id)->first();
         $this->assertNull($accountExcluded);
     }
-
 
     public function routeStore()
     {

@@ -9,8 +9,7 @@ class NewsLetterUpdateInputDto
         public string $name,
         public string $description,
         public string $email
-    )
-    {
+    ) {
 
     }
 }

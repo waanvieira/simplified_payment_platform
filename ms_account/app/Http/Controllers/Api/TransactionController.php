@@ -7,7 +7,6 @@ use App\Http\Requests\TransactionRequest;
 use App\Models\Transaction;
 use App\UseCases\DTO\Transaction\TransactionCreateInputDto;
 use App\UseCases\Transaction\TransferCreateUseCase;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class TransactionController extends Controller
@@ -22,6 +21,7 @@ class TransactionController extends Controller
             )
         );
         $model = new Transaction((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_CREATED);
     }
 }

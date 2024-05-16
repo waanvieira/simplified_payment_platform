@@ -9,7 +9,6 @@ use Tests\TestCase;
 
 class UserEntityTest extends TestCase
 {
-
     public function testAttributes()
     {
         $user = User::create(
@@ -51,7 +50,7 @@ class UserEntityTest extends TestCase
             $this->assertTrue(false);
         } catch (Exception $e) {
             $this->assertTrue($e instanceof InvalidArgumentException);
-            $this->assertEquals("Email address is invalid.", $e->getMessage());
+            $this->assertEquals('Email address is invalid.', $e->getMessage());
         }
     }
 
@@ -67,7 +66,7 @@ class UserEntityTest extends TestCase
             $this->assertTrue(false);
         } catch (Exception $e) {
             $this->assertTrue($e instanceof InvalidArgumentException);
-            $this->assertEquals("Invalid CPF", $e->getMessage());
+            $this->assertEquals('Invalid CPF', $e->getMessage());
         }
     }
 
@@ -83,7 +82,7 @@ class UserEntityTest extends TestCase
             $this->assertTrue(false);
         } catch (Exception $e) {
             $this->assertTrue($e instanceof InvalidArgumentException);
-            $this->assertEquals("Invalid CNPJ", $e->getMessage());
+            $this->assertEquals('Invalid CNPJ', $e->getMessage());
         }
     }
 }

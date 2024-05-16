@@ -9,7 +9,7 @@ class AccountUpdateOutputDto
         public string $cpf_cnpj,
         public string $name,
         public string $email,
-        public bool $shopkeeper = false,
+        public bool $shopkeeper,
         public float $balance,
         public string $created_at = '',
         public string $updated_at = '',

@@ -9,7 +9,7 @@ abstract class AbstractBaseCrudRepository implements BaseCrudInterface
 {
     protected $model;
 
-    abstract function model() : Model;
+    abstract public function model(): Model;
 
     public function __construct()
     {
@@ -31,12 +31,14 @@ abstract class AbstractBaseCrudRepository implements BaseCrudInterface
         $response = $this->findById($id);
         $response->update($input);
         $response->refresh();
+
         return $response;
     }
 
     public function delete(string $id): bool
     {
         $response = $this->findById($id);
+
         return $response->delete();
     }
 

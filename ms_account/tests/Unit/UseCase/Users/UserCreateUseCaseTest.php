@@ -26,7 +26,7 @@ class UserCreateUseCaseTest extends FrameworkTestCase
         $rabbitInterface->shouldReceive('producer')->andReturn(true);
         $useCase = new UserCreateUseCase($repositoyMock, $rabbitInterface);
         $mockInputDto = Mockery::mock(UserCreateInputDto::class, [$modelEntity->name, $modelEntity->cpfCnpj, $modelEntity->email, $modelEntity->password]);
-        $userResponse =  $useCase->execute($mockInputDto);
+        $userResponse = $useCase->execute($mockInputDto);
         $this->assertInstanceOf(UserCreateOutputDto::class, $userResponse);
         $this->assertEquals($modelEntity->id(), $userResponse->id);
         $this->assertEquals($modelEntity->name, $userResponse->name);
@@ -60,6 +60,7 @@ class UserCreateUseCaseTest extends FrameworkTestCase
         $email = 'email@dev.com.br';
         $pass = '*****';
         $cpfCnpj = '616.177.000-88';
+
         return User::create($name, $cpfCnpj, $email, $pass);
     }
 }

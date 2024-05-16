@@ -6,7 +6,6 @@ use App\Exceptions\MethodMagicException;
 
 trait MethodsMagicsTrait
 {
-
     public function __get($prop)
     {
         if (isset($this->{$prop})) {
@@ -24,6 +23,6 @@ trait MethodsMagicsTrait
 
     public function createdAt(): string
     {
-        return (string)$this->createdAt->format('Y-m-d H:i:s');
+        return (string) $this->createdAt->format('Y-m-d H:i:s');
     }
 }

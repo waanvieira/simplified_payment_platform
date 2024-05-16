@@ -1,9 +1,6 @@
 <?php
 
-
 namespace Tests\Traits;
-
-
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Testing\TestResponse;

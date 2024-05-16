@@ -3,7 +3,6 @@
 namespace App\Domain\Repositories;
 
 use App\Domain\Entities\User;
-use Illuminate\Database\Eloquent\Model;
 
 interface UserEntityRepositoryInterface
 {

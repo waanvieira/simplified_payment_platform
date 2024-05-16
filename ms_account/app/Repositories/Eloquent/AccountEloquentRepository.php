@@ -32,7 +32,7 @@ class AccountEloquentRepository implements AccountEntityRepositoryInterface
             'password' => $entity->password,
             'shopkeeper' => $entity->shopkeeper,
             'balance' => $entity->balance,
-            'created_at' => $entity->createdAt()
+            'created_at' => $entity->createdAt(),
         ]);
 
         return $this->convertObjectToEntity($dataDb);
@@ -41,7 +41,7 @@ class AccountEloquentRepository implements AccountEntityRepositoryInterface
     public function findById(string $id): Entity
     {
         $dataDb = $this->model->find($id);
-        if (!$dataDb) {
+        if (! $dataDb) {
             throw new NotFoundException("Register {$id} Not Found");
         }
 
@@ -106,16 +106,18 @@ class AccountEloquentRepository implements AccountEntityRepositoryInterface
             'password' => $entity->password,
             'shopkeeper' => $entity->shopkeeper,
             'balance' => $entity->balance,
-            'created_at' => $entity->createdAt()
+            'created_at' => $entity->createdAt(),
         ]);
 
         $dataDb->refresh();
+
         return $this->convertObjectToEntity($dataDb);
     }
 
     public function delete(string $entityId): bool
     {
         $dataDb = $this->findByIdEloquent($entityId);
+
         return $dataDb->delete();
     }
 

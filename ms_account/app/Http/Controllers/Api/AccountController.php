@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AccountRequest;
 use App\Models\Account;
-use App\UseCases\DTO\Account\AccountCreateInputDto;
-use App\UseCases\DTO\Account\AccountUpdateInputDto;
 use App\UseCases\Account\AccountCreateUseCase;
 use App\UseCases\Account\AccountDeleteUseCase;
 use App\UseCases\Account\AccountFindByIdUseCase;
 use App\UseCases\Account\AccountGetAllUseCase;
 use App\UseCases\Account\AccountUpdateUseCase;
+use App\UseCases\DTO\Account\AccountCreateInputDto;
+use App\UseCases\DTO\Account\AccountUpdateInputDto;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -20,6 +20,7 @@ class AccountController extends Controller
     public function index(Request $request, AccountGetAllUseCase $useCase)
     {
         $response = $useCase->execute($request->all());
+
         return response()->json($response, Response::HTTP_OK);
     }
 
@@ -35,6 +36,7 @@ class AccountController extends Controller
         );
 
         $model = new Account((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_CREATED);
     }
 
@@ -42,6 +44,7 @@ class AccountController extends Controller
     {
         $response = $useCase->execute($id);
         $model = new Account((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_OK);
     }
 
@@ -57,12 +60,14 @@ class AccountController extends Controller
         );
 
         $model = new Account((array) $response);
+
         return response()->json(['data' => $model], Response::HTTP_OK);
     }
 
     public function destroy($id, AccountDeleteUseCase $useCase)
     {
         $useCase->execute($id);
+
         return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }

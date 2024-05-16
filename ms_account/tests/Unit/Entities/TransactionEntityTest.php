@@ -7,7 +7,6 @@ use App\Domain\Entities\Transaction;
 use App\Domain\Enum\TransactionStatus;
 use App\Domain\Enum\TransactionType;
 use App\Exceptions\EntityValidationException;
-use App\Exceptions\InvalidArgumentException;
 use DateTime;
 use Exception;
 use Tests\TestCase;
@@ -49,7 +48,7 @@ class TransactionEntityTest extends TestCase
             $this->assertTrue(false);
         } catch (Exception $e) {
             $this->assertInstanceOf(EntityValidationException::class, $e);
-            $this->assertEquals("payment already approved", $e->getMessage());
+            $this->assertEquals('payment already approved', $e->getMessage());
         }
     }
 
@@ -69,33 +68,34 @@ class TransactionEntityTest extends TestCase
             $this->assertTrue(false);
         } catch (Exception $e) {
             $this->assertInstanceOf(EntityValidationException::class, $e);
-            $this->assertEquals("payment already approved", $e->getMessage());
+            $this->assertEquals('payment already approved', $e->getMessage());
         }
     }
 
     public function testTransactionAlrightConfirmationAt()
     {
-            $transaction = $this->createTransactionEntity();
-            $transactionRestore = Transaction::restore(
-                id: $transaction->id,
-                transactionType: $transaction->transactionType,
-                payerId: $transaction->payerId,
-                payeeId: $transaction->payeeId,
-                value: $transaction->value,
-                transactionStatus: TransactionStatus::APROVED,
-                confirmationAt: new DateTime()
-            );
+        $transaction = $this->createTransactionEntity();
+        $transactionRestore = Transaction::restore(
+            id: $transaction->id,
+            transactionType: $transaction->transactionType,
+            payerId: $transaction->payerId,
+            payeeId: $transaction->payeeId,
+            value: $transaction->value,
+            transactionStatus: TransactionStatus::APROVED,
+            confirmationAt: new DateTime()
+        );
 
-            $this->assertEquals(TransactionStatus::PROCESSING, $transactionRestore->transactionStatus);
-            $transactionRestore->paymentAproved();
-            $this->assertEquals(TransactionStatus::APROVED, $transactionRestore->transactionStatus);
-            $this->assertEquals(date('Y-m-d H:i:s'), $transactionRestore->confirmationAt());
+        $this->assertEquals(TransactionStatus::PROCESSING, $transactionRestore->transactionStatus);
+        $transactionRestore->paymentAproved();
+        $this->assertEquals(TransactionStatus::APROVED, $transactionRestore->transactionStatus);
+        $this->assertEquals(date('Y-m-d H:i:s'), $transactionRestore->confirmationAt());
     }
 
     private function createTransactionEntity()
     {
         $payer = Account::create(fake()->name(), '563.657.910-11', fake()->email(), 30);
         $payee = Account::create(fake()->name(), '424.559.250-80', fake()->email(), 20);
+
         return Transaction::create(
             transactionType: TransactionType::TRANSFER,
             payerId: $payer->id,

@@ -21,7 +21,7 @@ class AccountFactory extends Factory
         return [
             'id' => Uuid::uuid4()->toString(),
             'name' => fake()->name(),
-            'cpf_cnpj' =>  "309.580.130-04",
+            'cpf_cnpj' => '309.580.130-04',
             'email' => fake()->unique()->safeEmail(),
             'balance' => 10,
             'password' => Hash::make('password'),

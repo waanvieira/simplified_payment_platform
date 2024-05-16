@@ -2,15 +2,16 @@
 
 namespace Tests\Traits;
 
-
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Testing\TestResponse;
 
 trait TestValidations
 {
-    protected abstract function model();
-    protected abstract function routeStore();
-    protected abstract function routeUpdate();
+    abstract protected function model();
+
+    abstract protected function routeStore();
+
+    abstract protected function routeUpdate();
 
     protected function assertInvalidationInStoreAction(
         array $data,

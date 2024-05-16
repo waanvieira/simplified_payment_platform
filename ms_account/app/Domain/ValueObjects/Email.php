@@ -19,8 +19,8 @@ class Email
 
     private function validateEmail(string $value)
     {
-        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException("Email address is invalid.");
+        if (! filter_var($value, FILTER_VALIDATE_EMAIL)) {
+            throw new InvalidArgumentException('Email address is invalid.');
         }
     }
 }

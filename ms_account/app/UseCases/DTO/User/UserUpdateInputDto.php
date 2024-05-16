@@ -9,8 +9,7 @@ class UserUpdateInputDto
         public string $cpfCnpj = '',
         public string $name = '',
         public string $email = '',
-    )
-    {
+    ) {
 
     }
 }

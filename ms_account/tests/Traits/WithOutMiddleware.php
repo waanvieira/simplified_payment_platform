@@ -6,14 +6,15 @@ use App\Http\Middleware\JWTAuthenticateAccess;
 
 trait WithOutMiddleware
 {
-    protected abstract function model();
-    protected abstract function controller();
+    abstract protected function model();
+
+    abstract protected function controller();
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->withoutMiddleware([
-            JWTAuthenticateAccess::class
+            JWTAuthenticateAccess::class,
         ]);
         $this->model = $this->model();
         $this->controller = $this->controller();

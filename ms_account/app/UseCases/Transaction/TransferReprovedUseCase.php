@@ -30,7 +30,7 @@ class TransferReprovedUseCase
             transactionType: TransactionType::TRANSFER,
             payerId: new Uuid($input->payerId),
             payeeId: new Uuid($input->payeeId),
-            value: (float)$input->value,
+            value: (float) $input->value,
             transactionStatus: TransactionStatus::ERROR
         );
 
@@ -42,7 +42,7 @@ class TransferReprovedUseCase
             $self->repository->update($transactionEntity);
             $payer->transferReprovedEstimateValue($transactionEntity->value);
             $self->accountEntityRepositoryInterface->update($payer);
-            $self->rabbitMqService->producer("notifyTransaction", $transactionEntity->toArray());
+            $self->rabbitMqService->producer('notifyTransaction', $transactionEntity->toArray());
         });
     }
 }

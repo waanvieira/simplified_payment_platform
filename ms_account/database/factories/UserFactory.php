@@ -27,7 +27,7 @@ class UserFactory extends Factory
         return [
             'id' => Uuid::uuid4()->toString(),
             'name' => fake()->name(),
-            'cpf_cnpj' =>  "201.569.810-84",
+            'cpf_cnpj' => '201.569.810-84',
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),

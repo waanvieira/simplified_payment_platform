@@ -25,7 +25,7 @@ class UserEloquentRepository implements UserEntityRepositoryInterface
             'email' => $user->email(),
             'password' => $user->password,
             'shopkeeper' => $user->shopkeeper,
-            'created_at' => $user->createdAt()
+            'created_at' => $user->createdAt(),
         ]);
 
         return $this->convertToEntity($dataDb);
@@ -34,7 +34,7 @@ class UserEloquentRepository implements UserEntityRepositoryInterface
     public function findById(string $id): User
     {
         $dataDb = $this->model->find($id);
-        if (!$dataDb) {
+        if (! $dataDb) {
             throw new NotFoundException("Register {$id} Not Found");
         }
 
@@ -98,16 +98,18 @@ class UserEloquentRepository implements UserEntityRepositoryInterface
             'email' => $user->email,
             'password' => $user->password,
             'shopkeeper' => $user->shopkeeper,
-            'created_at' => $user->createdAt()
+            'created_at' => $user->createdAt(),
         ]);
 
         $dataDb->refresh();
+
         return $this->convertToEntity($dataDb);
     }
 
     public function delete(string $UserId): bool
     {
         $dataDb = $this->findByIdEloquent($UserId);
+
         return $dataDb->delete();
     }
 

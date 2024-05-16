@@ -13,6 +13,7 @@ class EntityValidationException extends Exception
     {
         $this->message = $message;
     }
+
     /**
      * Report the exception.
      *

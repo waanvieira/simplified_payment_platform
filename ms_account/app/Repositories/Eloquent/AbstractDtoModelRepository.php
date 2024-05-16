@@ -9,7 +9,7 @@ abstract class AbstractDtoModelRepository implements BaseDtoInterface
 {
     protected $model;
 
-    abstract function model() : Model;
+    abstract public function model(): Model;
 
     public function __construct()
     {
@@ -31,12 +31,14 @@ abstract class AbstractDtoModelRepository implements BaseDtoInterface
         $response = $this->findByIdModel($id);
         $response->update($input);
         $response->refresh();
+
         return $response;
     }
 
     public function delete(string $id): bool
     {
         $response = $this->findByIdModel($id);
+
         return $response->delete();
     }
 

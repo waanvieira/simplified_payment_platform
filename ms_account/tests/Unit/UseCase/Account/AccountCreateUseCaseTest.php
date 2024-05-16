@@ -5,9 +5,9 @@ namespace Tests\Unit\UseCase\Account;
 use App\Domain\Entities\Account;
 use App\Domain\Repositories\AccountEntityRepositoryInterface;
 use App\Services\RabbitMQ\RabbitInterface;
+use App\UseCases\Account\AccountCreateUseCase;
 use App\UseCases\DTO\Account\AccountCreateInputDto;
 use App\UseCases\DTO\Account\AccountCreateOutputDto;
-use App\UseCases\Account\AccountCreateUseCase;
 use Mockery;
 use PHPUnit\Framework\TestCase as FrameworkTestCase;
 use stdClass;
@@ -60,6 +60,7 @@ class AccountCreateUseCaseTest extends FrameworkTestCase
         $email = 'email@dev.com.br';
         $pass = '*****';
         $cpfCnpj = '616.177.000-88';
+
         return Account::create($name, $cpfCnpj, $email, $pass);
     }
 }

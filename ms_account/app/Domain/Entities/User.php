@@ -7,7 +7,6 @@ namespace App\Domain\Entities;
 use App\Domain\ValueObjects\CpfCnpj;
 use App\Domain\ValueObjects\Email;
 use App\Domain\ValueObjects\Uuid;
-use App\Traits\MethodsMagicsTrait;
 use DateTime;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
@@ -29,6 +28,7 @@ class User extends Entity
     public static function create(string $name, string $cpfCnpj, string $email, string $password): self
     {
         $id = RamseyUuid::uuid4()->toString();
+
         return new self(
             id: new Uuid($id),
             name: $name,
@@ -59,7 +59,7 @@ class User extends Entity
             'cpfCnpj' => $this->cpfCnpj,
             'email' => $this->email,
             'shopkeeper' => $this->shopkeeper,
-            'createdAt' => $this->createdAt
+            'createdAt' => $this->createdAt,
         ];
     }
 
