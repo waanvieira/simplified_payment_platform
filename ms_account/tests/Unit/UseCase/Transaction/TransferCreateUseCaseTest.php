@@ -33,9 +33,9 @@ class TransferCreateUseCaseTest extends TestCase
         $payee = ModelsAccount::factory()->create(['id' => Uuid::random(), 'name' => fake()->name(), 'cpf_cnpj' => '368.708.660-74', 'email' => fake()->email(), 'balance' => 20]);
         $model = new ModelsTransaction();
         $repositoyMock = new TransactionEloquentRepository($model);
-        // $rabbitInterface = Mockery::mock(stdClass::class, RabbitInterface::class);
-        // $rabbitInterface->shouldReceive('producer')->andReturn(true);
-        $rabbitInterface = new AMQPService();
+        $rabbitInterface = Mockery::mock(stdClass::class, RabbitInterface::class);
+        $rabbitInterface->shouldReceive('producer')->andReturn(true);
+        // $rabbitInterface = new AMQPService();
         $modelAccount = new ModelsAccount();
         $repositoyMockAccount = new AccountEloquentRepository($modelAccount);
         $useCase = new TransferCreateUseCase($repositoyMock, $repositoyMockAccount, $rabbitInterface);
