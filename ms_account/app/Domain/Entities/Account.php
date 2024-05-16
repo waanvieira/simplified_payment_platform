@@ -11,7 +11,7 @@ use App\Domain\ValueObjects\Uuid;
 use App\Exceptions\EntityValidationException;
 use DateTime;
 use Ramsey\Uuid\Uuid as RamseyUuid;
-use Decimal\Decimal;
+// use Decimal\Decimal;
 class Account extends Entity
 {
     public function __construct(
@@ -98,27 +98,30 @@ class Account extends Entity
             throw new EntityValidationException('balance unavailable to carry out transaction');
         }
 
-        $balance = new Decimal((string)$this->balance);
-        $value = new Decimal((string)$value);
-        $result = $balance - $value;
-        $this->balance = $result->toFloat();
+        $this->balance -= $value;
+        // $balance = new Decimal((string)$this->balance);
+        // $value = new Decimal((string)$value);
+        // $result = $balance - $value;
+        // $this->balance = $result->toFloat();
 
     }
 
     public function receiveTransfer(float $value)
     {
-        $balance = new Decimal((string)$this->balance);
-        $value = new Decimal((string)$value);
-        $result = $balance += $value;
-        $this->balance = $result->toFloat();
+        // $balance = new Decimal((string)$this->balance);
+        // $value = new Decimal((string)$value);
+        // $result = $balance += $value;
+        // $this->balance = $result->toFloat();
+        $this->balance += $value;
     }
 
     public function transferReprovedEstimateValue(float $value)
     {
-        $balance = new Decimal((string)$this->balance);
-        $value = new Decimal((string)$value);
-        $result = $balance += $value;
-        $this->balance = $result->toFloat();
+        // $balance = new Decimal((string)$this->balance);
+        // $value = new Decimal((string)$value);
+        // $result = $balance += $value;
+        // $this->balance = $result->toFloat();
+        $this->balance += $value;
     }
 
     public function addTransaction(string $transactionId)

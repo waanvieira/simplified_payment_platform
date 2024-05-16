@@ -29,11 +29,11 @@ jobs:
       with:
         php-version: '8.2'
     - uses: actions/checkout@v3
-    - name: Install lib Decimal PHP
-      run: |
-         pecl install decimal
-         extension=decimal
-         apt-get install libmpdec-dev
+    # - name: Install lib Decimal PHP
+    #   # run: |
+    #   #    pecl install decimal
+    #   #    extension=decimal
+    #   #    apt-get install libmpdec-dev
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
