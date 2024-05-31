@@ -12,11 +12,6 @@ Projeto simplificado de transferências entre contas que utiliza o padrão Saga,
 - MYSQL 8
 - RabbitMQ
 
-## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
-
 # Como executar o projeto
 
 ## Pré-requisitos
